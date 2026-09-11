@@ -8,8 +8,6 @@ image: "https://db00ytxhy7e1q.cloudfront.net/2024/12/OFICIAL-Dimensao-Wordpress-
 
 <audio controls src="/assets/media/ciencia-tecnologia-ia.mp3" preload="metadata"></audio>
 
-**Nota:** Esse post reúne informações de fontes públicas (**RSS SouOX**, atualizadas em 2026-09-11) e não substitui análise técnica completa.
-
 ## O que aconteceu nos últimos dias
 
 Nos últimos quatro dias, a interseção entre **ciência**, **tecnologia** e **inteligência artificial** ficou ainda mais densa. Não é apenas uma onda de lançamentos: são sinais de uma transição real — de laboratório para o cotidiano, de protótipo para produto.
