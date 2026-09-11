@@ -5,7 +5,7 @@ timezone: America/Sao_Paulo
 url: "https://anaclaraia.github.io"
 baseurl: ""
 whatsapp_url: "https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d"
-permalink: /:year/:month/:day/:title/
+permalink: /p/:title.html
 markdown: kramdown
 kramdown:
   input: GFM
