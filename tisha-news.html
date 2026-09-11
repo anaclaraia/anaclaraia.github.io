@@ -1,0 +1,13 @@
+---
+layout: default
+title: Tisha News
+description: Seção de notícias de inteligência artificial e tecnologia do blog Ana Clara.
+permalink: /tisha-news/
+---
+<div class="page-shell wrap news-page">
+  <header class="page-header"><p class="eyebrow">Uma seção do blog Ana Clara</p><h1>Tisha <em>News.</em></h1><p class="post-description">Espaço reservado para notícias de inteligência artificial e tecnologia, com fontes e contexto.</p></header>
+  {% assign news_posts = site.posts | where_exp: 'post', 'post.tags contains "tisha-news"' %}
+  {% if news_posts.size > 0 %}<div class="post-list">{% for post in news_posts %}{% include post-card.html post=post %}{% endfor %}</div>
+  {% else %}<div class="empty-state"><span class="empty-symbol" aria-hidden="true">[ &nbsp; ]</span><div><span class="status-label">Em preparação</span><h2>As notícias ainda estão por vir.</h2><p>Não há notícias publicadas nesta seção. Quando os primeiros conteúdos estiverem disponíveis, eles aparecerão aqui.</p></div></div>{% endif %}
+  <a class="text-link" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Conhecer o canal no WhatsApp ↗<span class="sr-only"> (abre em nova aba)</span></a>
+</div>

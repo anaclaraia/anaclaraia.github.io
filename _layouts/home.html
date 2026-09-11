@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy"><p class="eyebrow">Inteligência artificial · Tecnologia · Pessoas</p>
+      <h1 id="hero-title">O futuro é tecnológico.<br><em>O olhar é humano.</em></h1>
+      <p class="hero-description">Um espaço para explorar ideias, fazer boas perguntas e acompanhar o que muda na inteligência artificial — sem perder de vista o que importa para as pessoas.</p>
+      <a class="text-link" href="#publicacoes">Explore o blog <span aria-hidden="true">↓</span></a>
+    </div>
+    <figure class="hero-art"><img src="{{ '/assets/images/connections.svg' | relative_url }}" width="480" height="480" alt="Ilustração abstrata de órbitas e conexões em ciano e violeta"><figcaption>Entre conexões, novas perspectivas.</figcaption></figure>
+  </section>
+  <section class="editorial-section" id="publicacoes" aria-labelledby="posts-heading">
+    <div class="section-heading"><div><p class="eyebrow">Caderno aberto</p><h2 id="posts-heading">Últimas publicações</h2></div><a class="text-link small" href="{{ '/feed.xml' | relative_url }}">Acompanhar por RSS <span aria-hidden="true">↗</span></a></div>
+    {% if site.posts.size > 0 %}
+      <div class="post-list">{% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}</div>
+    {% else %}
+      <div class="empty-state"><span class="empty-symbol" aria-hidden="true">[ &nbsp; ]</span><div><h3>A primeira página ainda está por vir.</h3><p>Não há publicações por aqui ainda. Quando os primeiros textos estiverem disponíveis, você vai encontrá-los neste espaço.</p><a class="text-link" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Conheça o canal no WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></div></div>
+    {% endif %}
+  </section>
+  <section class="news-section" id="tisha-news" aria-labelledby="news-heading">
+    <div class="news-intro"><p class="eyebrow">Uma seção do blog</p><h2 id="news-heading">Tisha <em>News</em><span class="accent-period">.</span></h2><p>Espaço reservado para notícias de inteligência artificial e tecnologia.</p></div>
+    <div class="news-content">
+      {% assign news_posts = site.posts | where_exp: 'post', 'post.tags contains "tisha-news"' %}
+      {% if news_posts.size > 0 %}
+        <div class="post-list compact">{% for post in news_posts %}{% include post-card.html post=post %}{% endfor %}</div>
+      {% else %}
+        <span class="status-label">Em preparação</span><h3>Contexto antes do ruído.</h3><p>Esta seção ainda não tem notícias publicadas. O espaço está pronto para recebê-las, com fontes e contexto.</p>
+      {% endif %}
+    </div>
+  </section>
+  <section class="about-strip" aria-labelledby="about-heading"><p class="eyebrow">Prazer, este é o meu espaço</p><div><h2 id="about-heading">Curiosidade para entender.<br>Clareza para compartilhar.</h2><p>O blog Ana Clara nasce como um lugar de encontro entre tecnologia e perspectiva humana. Por aqui, a proposta é abrir espaço para descobertas e conversas que façam sentido.</p><a class="text-link" href="{{ '/sobre/' | relative_url }}">Sobre o blog <span aria-hidden="true">→</span></a></div></section>
+  <aside class="channel-banner" aria-labelledby="channel-heading"><div><p class="eyebrow">Continue a conversa</p><h2 id="channel-heading">Também estamos no WhatsApp.</h2><p>Conheça o canal e acompanhe as atualizações por lá.</p></div><a class="button" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Conhecer o canal <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></aside>
+</div>
+{{ content }}

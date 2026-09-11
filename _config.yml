@@ -1,0 +1,29 @@
+title: "Ana Clara • Blog"
+description: "Um espaço para olhar a inteligência artificial e a tecnologia com curiosidade e perspectiva humana."
+lang: pt-BR
+timezone: America/Sao_Paulo
+url: "https://anaclaraia.github.io"
+baseurl: ""
+whatsapp_url: "https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d"
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+future: false
+show_drafts: false
+strict_front_matter: true
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - templates
+  - scripts
+  - .bundle

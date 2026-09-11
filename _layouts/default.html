@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'pt-BR' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
+  <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/monogram.svg' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Ana Clara • Blog — início"><img src="{{ '/assets/images/monogram.svg' | relative_url }}" width="40" height="40" alt=""><span>Ana Clara <span class="brand-dot">•</span> <span class="brand-blog">Blog</span></span></a>
+    <nav aria-label="Navegação principal">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Início</a>
+      <a href="{{ '/#tisha-news' | relative_url }}">Tisha News</a>
+      <a href="{{ '/sobre/' | relative_url }}"{% if page.url == '/sobre/' %} aria-current="page"{% endif %}>Sobre</a>
+    </nav>
+  </header>
+  <main id="conteudo" tabindex="-1">{{ content }}</main>
+  <footer class="site-footer wrap">
+    <div><a class="footer-name" href="{{ '/' | relative_url }}">Ana Clara • Blog</a><p>Tecnologia, com espaço para o humano.</p></div>
+    <nav aria-label="Links do rodapé"><a href="{{ '/feed.xml' | relative_url }}">Feed RSS</a><a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Canal no WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></nav>
+  </footer>
+</body>
+</html>
