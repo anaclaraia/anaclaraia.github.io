@@ -28,6 +28,7 @@
     <nav aria-label="Navegação principal">
       <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Início</a>
       <a href="{{ '/#tisha-news' | relative_url }}">Tisha News</a>
+      <a href="{{ site.baseurl }}/blog.html"{% if page.url == '/blog.html' %} aria-current="page"{% endif %}>Blog</a>
       <a href="{{ '/sobre/' | relative_url }}"{% if page.url == '/sobre/' %} aria-current="page"{% endif %}>Sobre</a>
     </nav>
   </header>

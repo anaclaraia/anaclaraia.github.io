@@ -1,0 +1,18 @@
+---
+layout: default
+title: Blog — Ana Clara
+---
+<div class="wrap">
+  <section aria-labelledby="blog-heading">
+    <h2 id="blog-heading">Publicações</h2>
+    <div class="post-list">
+      {% for post in site.posts %}
+        <article>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.description | default: post.excerpt }}</p>
+          <audio controls src="/assets/media/{{ post.date | date: '%Y-%m-%d' }}-{{ post.title | slugify }}.mp3" preload="metadata"></audio>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>
