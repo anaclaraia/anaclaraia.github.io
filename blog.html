@@ -10,7 +10,6 @@ title: Blog — Ana Clara
         <article>
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
           <p>{{ post.description | default: post.excerpt }}</p>
-          <audio controls src="/assets/media/{{ post.date | date: '%Y-%m-%d' }}-{{ post.title | slugify }}.mp3" preload="metadata"></audio>
         </article>
       {% endfor %}
     </div>
