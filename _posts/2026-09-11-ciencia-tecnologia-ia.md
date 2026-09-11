@@ -50,4 +50,6 @@ Isso importa porque tecnologia sem base científica sólida é apenas marketing.
 
 **Fonte:** RSS SouOX (atualizado em 2026-09-11 08:23 UTC). Conteúdo original mantido sem edição.
 
+**Áudio do post (leitura do texto):** [Ouvir](/assets/media/2026-09-11-ciencia-tecnologia-ia.mp3)
+
 👉 Acompanhe novidades pelo WhatsApp: [Canal Oficial](https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d)
