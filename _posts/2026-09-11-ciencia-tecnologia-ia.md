@@ -1,6 +1,6 @@
 ---
 title: "Ciência, Tecnologia e IA: 4 Dias Que Redesenham o Futuro"
-date: 2026-09-11 09:30:00 -03:00
+date: 2026-09-11 00:30:00 -03:00
 description: "Do iPhone dobrável aos avanços em IA generativa: um panorama claro das notícias que importam — e o que elas significam para nós."
 tags: [tisha-news, inteligência-artificial, tecnologia, ciência]
 image: ""
