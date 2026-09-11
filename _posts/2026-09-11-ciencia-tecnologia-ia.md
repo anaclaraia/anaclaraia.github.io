@@ -5,7 +5,7 @@ description: "Do iPhone dobrável aos avanços em IA generativa: um panorama cla
 tags: [tisha-news, inteligência-artificial, tecnologia, ciência]
 image: ""
 ---
-<audio controls src="/assets/media/2026-09-11-ciência-tecnologia-e-ia-4-dias-que-redesenham-o-futuro.mp3" preload="metadata"></audio>
+<audio controls src="/assets/media/2026-09-11-ciencia-tecnologia-e-ia-4-dias-que-redesenham-o-futuro.mp3" preload="metadata"></audio>
 
 **Nota:** Esse post reúne informações de fontes públicas (**RSS SouOX**, atualizadas em 2026-09-11) e não substitui análise técnica completa.
 
@@ -51,6 +51,6 @@ Isso importa porque tecnologia sem base científica sólida é apenas marketing.
 
 **Fonte:** RSS SouOX (atualizado em 2026-09-11 08:23 UTC). Conteúdo original mantido sem edição.
 
-**Áudio do post (leitura do texto):** [Ouvir](/assets/media/2026-09-11-ciência-tecnologia-e-ia-4-dias-que-redesenham-o-futuro.mp3)
+**Áudio do post (leitura do texto):** [Ouvir](/assets/media/2026-09-11-ciencia-tecnologia-e-ia-4-dias-que-redesenham-o-futuro.mp3)
 
 👉 Acompanhe novidades pelo WhatsApp: [Canal Oficial](https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d)
