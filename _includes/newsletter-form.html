@@ -1,18 +1,31 @@
-<aside class="newsletter-card" aria-labelledby="newsletter-title">
-  <p class="newsletter-eyebrow">Newsletter diária</p>
-  <h3 id="newsletter-title">Receba a Clara News</h3>
-  <p>As últimas novidades de ciência e tecnologia diretamente na sua caixa de entrada, todos os dias às <strong>06:06</strong>.</p>
+<aside class="newsletter-card newsletter-footer" aria-labelledby="footer-newsletter-title">
+  <div class="newsletter-intro">
+    <p class="newsletter-eyebrow">Newsletter diária · 06:06</p>
+    <h3 id="footer-newsletter-title">Clara News na sua caixa de entrada.</h3>
+    <p>Ciência, tecnologia e inteligência artificial com contexto, todos os dias.</p>
+  </div>
+
   <form method="post" action="https://app.thestories.cc/subscription/form" class="listmonk-form" accept-charset="UTF-8">
     <input type="hidden" name="nonce">
-    <label for="newsletter-email">E-mail</label>
-    <input id="newsletter-email" type="email" name="email" required autocomplete="email" placeholder="voce@exemplo.com">
-    <label for="newsletter-name">Nome <span>(opcional)</span></label>
-    <input id="newsletter-name" type="text" name="name" autocomplete="name" placeholder="Como podemos chamar você?">
-    <label class="newsletter-list" for="ad7d9">
-      <input id="ad7d9" type="checkbox" name="l" checked required value="ad7d93a4-ce6d-4b6e-a616-ae3473341a45">
-      <span><strong>Clara News</strong><small>Ciência e tecnologia</small></span>
-    </label>
-    <p class="newsletter-privacy">Seu nome e e-mail serão usados para enviar a newsletter. Você poderá cancelar a inscrição a qualquer momento.</p>
-    <input type="submit" value="Inscrever-se">
+
+    <div class="newsletter-fields">
+      <div class="newsletter-field">
+        <label for="footer-newsletter-email">E-mail</label>
+        <input id="footer-newsletter-email" type="email" name="email" required autocomplete="email" placeholder="voce@exemplo.com">
+      </div>
+      <div class="newsletter-field">
+        <label for="footer-newsletter-name">Nome <span>(opcional)</span></label>
+        <input id="footer-newsletter-name" type="text" name="name" autocomplete="name" placeholder="Seu nome">
+      </div>
+      <button type="submit">Inscrever-se <span aria-hidden="true">→</span></button>
+    </div>
+
+    <div class="newsletter-meta">
+      <label class="newsletter-list" for="footer-clara-news-list">
+        <input id="footer-clara-news-list" type="checkbox" name="l" checked required value="ad7d93a4-ce6d-4b6e-a616-ae3473341a45">
+        <span><strong>Clara News</strong> · Ciência e tecnologia</span>
+      </label>
+      <p class="newsletter-privacy">Seu nome e e-mail serão enviados ao nosso serviço de newsletter. Cancele quando quiser.</p>
+    </div>
   </form>
 </aside>

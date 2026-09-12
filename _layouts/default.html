@@ -87,6 +87,7 @@
     <div class="wrap footer-grid">
       <div><a class="footer-brand" href="{{ '/' | relative_url }}">Ana Clara<span>.ia</span></a><p>Inteligência artificial com clareza, contexto e espaço para o humano.</p></div>
       <nav aria-label="Links do rodapé"><a href="{{ '/blog.html' | relative_url }}">Blog</a><a href="{{ '/sobre/' | relative_url }}">Sobre</a><a href="{{ '/feed.xml' | relative_url }}">Feed RSS</a><a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></nav>
+      {% include newsletter-form.html %}
       <p class="copyright">© {{ 'now' | date: '%Y' }} Ana Clara.</p>
     </div>
   </footer>

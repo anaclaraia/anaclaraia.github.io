@@ -72,7 +72,8 @@ https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d
 - `assets/css/theme.css`: tokens fáceis de editar para fonte, paleta Twilio, escala H1–H6 e raio de 4 px.
 - `assets/css/newsletter.css`: apresentação responsiva do formulário Listmonk da Clara News.
 - `_data/navigation.yml`: links do menu principal, editáveis sem tocar no HTML.
-- `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`, `clara-news-continuity.svg`: SVGs originais locais.
+- `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`: SVGs originais locais.
+- `assets/images/clara-news-continuity.webp`: imagem WebP usada no destaque principal.
 - `GUIA-DE-ATUALIZACAO.md`: instruções para atualizar tudo diretamente pelo GitHub.
 - `robots.txt`, `sitemap.xml`, `llms.txt`: descoberta por buscadores, redes sociais e agentes de IA.
 - `feed.xml`: RSS 2.0 em Liquid, até 20 publicações, sem plugin extra.

@@ -10,7 +10,7 @@ layout: default
       <div class="hero-actions"><a class="button primary" href="{{ '/blog.html' | relative_url }}">Explorar o blog <span aria-hidden="true">→</span></a><a class="button ghost" href="#clara-news">Conhecer a Clara News</a></div>
     </div>
     <div class="hero-visual" aria-label="Representação visual da Clara News conectando pessoas e tecnologia">
-      <img src="{{ '/assets/images/clara-news-continuity.svg' | relative_url }}" width="620" height="620" alt="Ilustração de uma pessoa usando um computador com cartões digitais da Clara News">
+      <img src="{{ '/assets/images/clara-news-continuity.webp' | relative_url }}" width="1153" height="872" alt="Pessoa sorrindo enquanto usa um notebook, com cartões digitais de verificação">
     </div>
   </div>
 </section>
@@ -43,7 +43,7 @@ layout: default
 <section class="clara-section" id="clara-news" aria-labelledby="news-heading">
   <div class="wrap clara-grid">
     <div><p class="eyebrow light">Uma editoria do blog</p><h2 id="news-heading">Clara<br><em>News.</em></h2></div>
-    <div class="clara-copy"><p class="clara-kicker">Informação rápida.<br>Responsabilidade sempre.</p><p>Clara News acompanha as mudanças em inteligência artificial e tecnologia, separando fatos de especulação.</p>{% assign news_posts = site.posts | where_exp: 'post', 'post.tags contains "clara-news"' %}{% if news_posts.size > 0 %}<a class="button light-button" href="{{ '/clara-news/' | relative_url }}">Acessar notícias <span aria-hidden="true">→</span></a>{% else %}<span class="status-label">Em preparação</span>{% endif %}{% include newsletter-form.html %}</div>
+    <div class="clara-copy"><p class="clara-kicker">Informação rápida.<br>Responsabilidade sempre.</p><p>Clara News acompanha as mudanças em inteligência artificial e tecnologia, separando fatos de especulação.</p>{% assign news_posts = site.posts | where_exp: 'post', 'post.tags contains "clara-news"' %}{% if news_posts.size > 0 %}<a class="button light-button" href="{{ '/clara-news/' | relative_url }}">Acessar notícias <span aria-hidden="true">→</span></a>{% else %}<span class="status-label">Em preparação</span>{% endif %}</div>
   </div>
 </section>
 

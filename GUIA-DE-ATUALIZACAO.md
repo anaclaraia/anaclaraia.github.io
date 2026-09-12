@@ -17,8 +17,9 @@ Tudo pode ser alterado pelo navegador, sem instalar programas:
 - **Novo artigo:** copie `templates/post.md` para `_posts/AAAA-MM-DD-slug.md`
 - **Imagens:** envie para `assets/images/`
 - **Áudios:** envie para `assets/media/`
-- **Formulário da Clara News:** `_includes/newsletter-form.html`
-- **Estilo do formulário:** `assets/css/newsletter.css`
+- **Formulário global da Clara News no rodapé:** `_includes/newsletter-form.html`
+- **Posição do formulário abaixo dos links do rodapé:** `_layouts/default.html`
+- **Estilo horizontal e responsivo do formulário:** `assets/css/newsletter.css`
 - **Metatags sociais e JSON-LD:** `_layouts/default.html`
 - **Permissões para buscadores e agentes de IA:** `robots.txt`
 - **Índice legível por agentes de IA:** `llms.txt`
