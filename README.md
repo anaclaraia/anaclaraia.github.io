@@ -73,6 +73,7 @@ https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d
 - `_data/navigation.yml`: links do menu principal, editáveis sem tocar no HTML.
 - `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`: SVGs originais locais.
 - `GUIA-DE-ATUALIZACAO.md`: instruções para atualizar tudo diretamente pelo GitHub.
+- `robots.txt`, `sitemap.xml`, `llms.txt`: descoberta por buscadores, redes sociais e agentes de IA.
 - `feed.xml`: RSS 2.0 em Liquid, até 20 publicações, sem plugin extra.
 - `templates/post.md`: modelo editorial excluído da build.
 

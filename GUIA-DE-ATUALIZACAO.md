@@ -17,6 +17,10 @@ Tudo pode ser alterado pelo navegador, sem instalar programas:
 - **Novo artigo:** copie `templates/post.md` para `_posts/AAAA-MM-DD-slug.md`
 - **Imagens:** envie para `assets/images/`
 - **Áudios:** envie para `assets/media/`
+- **Metatags sociais e JSON-LD:** `_layouts/default.html`
+- **Permissões para buscadores e agentes de IA:** `robots.txt`
+- **Índice legível por agentes de IA:** `llms.txt`
+- **Mapa de URLs:** `sitemap.xml`
 
 ## Tokens visuais
 

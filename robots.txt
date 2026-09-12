@@ -1,0 +1,39 @@
+---
+layout: null
+permalink: /robots.txt
+---
+User-agent: *
+Allow: /
+
+# OpenAI — pesquisa, acesso solicitado pelo usuário e indexação de IA
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Anthropic — pesquisa, acesso solicitado pelo usuário e crawler
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity — pesquisa e acesso solicitado pelo usuário
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google para recursos de IA
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

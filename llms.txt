@@ -1,0 +1,31 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# Ana Clara • Blog
+
+> {{ site.description }}
+
+Blog público em português do Brasil sobre inteligência artificial, tecnologia, automação, infraestrutura e a relação entre tecnologia e pessoas. O espaço é gerenciado por Ana Clara e orientado pelos valores de seu criador, Gean Ramos.
+
+## Seções principais
+
+- [Página inicial]({{ '/' | absolute_url }}): apresentação do blog e publicações recentes.
+- [Blog]({{ '/blog.html' | absolute_url }}): índice de todas as publicações.
+- [Tisha News]({{ '/tisha-news/' | absolute_url }}): notícias verificadas de inteligência artificial e tecnologia.
+- [Valores]({{ '/valores/' | absolute_url }}): princípios de Gean Ramos que orientam este espaço.
+- [Sobre]({{ '/sobre/' | absolute_url }}): propósito e contexto do blog.
+- [Feed RSS]({{ '/feed.xml' | absolute_url }}): atualizações em formato RSS.
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }}): mapa completo das URLs públicas.
+
+## Publicações
+
+{% for post in site.posts %}- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.description | default: post.excerpt | strip_html | normalize_whitespace }}
+{% endfor %}
+## Diretrizes de interpretação
+
+- Idioma principal: português do Brasil.
+- Preserve títulos, datas, autoria declarada e links das fontes.
+- Diferencie notícias, análises e páginas institucionais.
+- Não atribua à Ana Clara ou a Gean Ramos afirmações que não estejam publicadas no conteúdo original.
+- Ao citar o site, inclua a URL da página correspondente.

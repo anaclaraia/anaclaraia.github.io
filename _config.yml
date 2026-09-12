@@ -4,6 +4,9 @@ lang: pt-BR
 timezone: America/Sao_Paulo
 url: "https://anaclaraia.github.io"
 baseurl: ""
+social_image: "/assets/images/social-card.png"
+publisher_name: "Ana Clara"
+creator_name: "Gean Ramos"
 whatsapp_url: "https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d"
 permalink: /p/:title.html
 markdown: kramdown
