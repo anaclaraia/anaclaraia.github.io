@@ -1,0 +1,10 @@
+# Menu principal — edite este arquivo diretamente pelo GitHub.
+# Use caminhos internos iniciados por /.
+- title: Início
+  url: /
+- title: Tisha News
+  url: /#tisha-news
+- title: Blog
+  url: /blog.html
+- title: Sobre
+  url: /sobre/

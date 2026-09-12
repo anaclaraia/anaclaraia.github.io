@@ -67,15 +67,18 @@ https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d
 - `_layouts/default.html`, `home.html`, `post.html`: estrutura sem JavaScript obrigatório.
 - `_includes/post-card.html`: listagem reutilizável.
 - `index.html`, `sobre.html`, `tisha-news.html`, `404.html`: páginas públicas.
-- `assets/css/style.css`: design navy/ciano/violeta, responsividade, foco e impressão.
-- `assets/images/monogram.svg`, `connections.svg`: SVGs originais locais.
+- `assets/css/style.css`: estrutura dos componentes, responsividade, foco e impressão.
+- `assets/css/theme.css`: tokens fáceis de editar para fonte, paleta Twilio, escala H1–H6 e raio de 4 px.
+- `_data/navigation.yml`: links do menu principal, editáveis sem tocar no HTML.
+- `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`: SVGs originais locais.
+- `GUIA-DE-ATUALIZACAO.md`: instruções para atualizar tudo diretamente pelo GitHub.
 - `feed.xml`: RSS 2.0 em Liquid, até 20 publicações, sem plugin extra.
 - `templates/post.md`: modelo editorial excluído da build.
 
 ### Acessibilidade e privacidade
 
-HTML semântico, idioma pt-BR, link de pular conteúdo, foco visível, mídia responsiva, redução de movimento e indicações de nova aba. Fontes são locais ao sistema; não há rastreadores, cookies, fontes de terceiros, analytics ou JavaScript. O canal WhatsApp é um link externo e segue as políticas do próprio serviço.
+HTML semântico, idioma pt-BR, link de pular conteúdo, foco visível, mídia responsiva, redução de movimento e indicações de nova aba. A família Whitney SSm é apenas declarada e depende de uma licença/instalação válida; os fallbacks são Helvetica Neue, Helvetica e Arial. O site usa Google Analytics e um JavaScript local mínimo para o menu móvel. O canal WhatsApp é um link externo e segue as políticas do próprio serviço.
 
 ### Validação desta entrega
 
-Ruby, Bundler e Jekyll não estão instalados no ambiente de implementação; por orientação, nenhuma instalação foi feita. A build Jekyll deve ser confirmada no GitHub Pages ou em ambiente local com Ruby. A ausência de posts mantém homepage, Tisha News e RSS em estado vazio real.
+A build Jekyll é validada pelo GitHub Pages após cada publicação. O estado da build e a página pública devem ser conferidos antes de considerar uma alteração concluída.

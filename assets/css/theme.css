@@ -1,0 +1,87 @@
+/*
+  ANA CLARA — TOKENS VISUAIS
+  Edite este arquivo para atualizar fonte, cores, tipografia e raios.
+  Valores baseados no sistema visual público da Twilio, com identidade própria.
+*/
+:root{
+  /* Fonte: Whitney SSm é comercial. Se estiver licenciada/instalada, será usada. */
+  --font-twilio:"Whitney SSm","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  /* Paleta Twilio */
+  --twilio-ink:#000d25;
+  --twilio-gray-850:#191f36;
+  --twilio-gray-800:#232b45;
+  --twilio-gray-700:#38425e;
+  --twilio-gray-300:#9aa0b4;
+  --twilio-gray-100:#dde0e6;
+  --twilio-gray-50:#f3f4f7;
+  --twilio-white:#ffffff;
+  --twilio-red:#db132a;
+  --twilio-red-light:#ef223a;
+  --twilio-red-dark:#b10f23;
+  --twilio-blue:#1866ee;
+  --twilio-blue-dark:#0e3e92;
+  --twilio-blue-light:#3acefa;
+  --twilio-cyan-50:#e4f7ff;
+
+  /* Compatibilidade com os componentes existentes */
+  --ink:var(--twilio-ink);
+  --ink-2:var(--twilio-gray-850);
+  --paper:var(--twilio-white);
+  --cream:var(--twilio-gray-50);
+  --mist:var(--twilio-gray-50);
+  --line:var(--twilio-gray-100);
+  --text:var(--twilio-ink);
+  --muted:var(--twilio-gray-700);
+  --red:var(--twilio-red);
+  --red-dark:var(--twilio-red-dark);
+  --blue:var(--twilio-blue);
+  --sans:var(--font-twilio);
+  --serif:var(--font-twilio);
+  --radius:4px;
+}
+
+html{font-family:var(--font-twilio)}
+body,button,input,textarea,select{font-family:var(--font-twilio)}
+
+/* Escala tipográfica oficial observada no design system Twilio */
+h1,.h1{font-family:var(--font-twilio)!important;font-size:48px!important;font-weight:700!important;letter-spacing:-.03em!important;line-height:60px!important}
+h2,.h2{font-family:var(--font-twilio)!important;font-size:40px!important;font-weight:700!important;letter-spacing:-.02em!important;line-height:52px!important}
+h3,.h3{font-family:var(--font-twilio)!important;font-size:28px!important;font-weight:700!important;letter-spacing:-.02em!important;line-height:36px!important}
+h4,.h4{font-family:var(--font-twilio)!important;font-size:20px!important;font-weight:700!important;letter-spacing:0!important;line-height:32px!important}
+h5,.h5{font-family:var(--font-twilio)!important;font-size:18px!important;font-weight:700!important;letter-spacing:0!important;line-height:28px!important}
+h6,.h6{font-family:var(--font-twilio)!important;font-size:16px!important;font-weight:600!important;letter-spacing:0!important;line-height:24px!important}
+
+/* Superfícies e componentes */
+.site-header{background:rgba(255,255,255,.98)}
+.nav-cta,.button.primary,.dark-button{background:var(--twilio-blue)}
+.nav-cta:hover,.button.primary:hover,.dark-button:hover{background:var(--twilio-blue-dark);color:var(--twilio-white)!important}
+.button{border-radius:999px}
+.hero{background:var(--twilio-ink)}
+.hero-grid{min-height:auto;padding-block:88px}
+.hero h1 span{color:var(--twilio-white)}
+.hero-description{color:var(--twilio-gray-100);font-size:20px;line-height:32px}
+.dark-section,.site-footer{background:var(--twilio-ink)}
+.topic-grid article,.signal-card,.story-art,.post-thumbnail,.post-cover img,.empty-state{border-radius:4px}
+.tisha-section{background:var(--twilio-red)}
+.tisha-section h2 em{font-family:var(--font-twilio);font-style:normal;color:var(--twilio-ink)}
+.story-copy li span{background:var(--twilio-blue)}
+.text-link{border-bottom-color:currentColor}
+.eyebrow{color:var(--twilio-red)}
+
+/* Toda imagem editorial usa raio de 4 px. Ícones e avatares mantêm sua forma. */
+.hero-visual>img,.post-thumbnail img,.post-cover img,.prose img,.story-art{border-radius:4px}
+
+@media(max-width:760px){
+  h1,.h1{font-size:32px!important;line-height:44px!important}
+  h2,.h2{font-size:28px!important;line-height:36px!important}
+  h3,.h3{font-size:24px!important;line-height:32px!important}
+  h4,.h4{font-size:18px!important;line-height:28px!important}
+  h5,.h5{font-size:16px!important;line-height:24px!important}
+  h6,.h6{font-size:14px!important;line-height:20px!important}
+  .hero-grid{padding-block:62px 42px;text-align:center}
+  .hero-copy{display:flex;flex-direction:column;align-items:center}
+  .hero-description{font-size:18px;line-height:28px}
+  .hero-actions{justify-content:center;width:100%}
+  .hero-visual{margin-top:12px}
+}

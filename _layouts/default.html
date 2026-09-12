@@ -19,6 +19,7 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-TZBPFV014K');</script>
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/monogram.svg' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/theme.css' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
 <body>
@@ -31,10 +32,7 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span class="sr-only">Abrir menu</span></button>
       <nav id="menu-principal" aria-label="Navegação principal">
-        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Início</a>
-        <a href="{{ '/#tisha-news' | relative_url }}">Tisha News</a>
-        <a href="{{ '/blog.html' | relative_url }}"{% if page.url == '/blog.html' %} aria-current="page"{% endif %}>Blog</a>
-        <a href="{{ '/sobre/' | relative_url }}"{% if page.url == '/sobre/' %} aria-current="page"{% endif %}>Sobre</a>
+        {% for item in site.data.navigation %}<a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}
         <a class="nav-cta" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Acompanhar no WhatsApp <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
