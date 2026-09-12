@@ -34,9 +34,14 @@ Altere uma variável para atualizar todos os componentes que a utilizam.
 
 ## Fonte Whitney SSm
 
-Whitney SSm é uma fonte comercial usada pela Twilio. O template declara a mesma família e a pilha oficial de fallback, mas não copia nem redistribui os arquivos proprietários da Twilio. Na ausência de uma licença/instalação da Whitney, o navegador usa Helvetica Neue, Helvetica ou Arial.
+Os arquivos licenciados estão hospedados em `assets/fonts/` e as regras `@font-face` ficam em `assets/css/whitney-ssm.css`. O arquivo é carregado no `<head>` antes de `style.css` e `theme.css`.
 
-Se o projeto adquirir uma licença web da Whitney, envie os arquivos autorizados para `assets/fonts/` e adicione as regras `@font-face` no topo de `assets/css/theme.css`, conforme as instruções fornecidas pelo licenciante.
+Para trocar ou atualizar as fontes:
+
+1. envie os novos arquivos autorizados para `assets/fonts/`;
+2. atualize os caminhos em `assets/css/whitney-ssm.css`;
+3. mantenha `font-display: swap` para preservar o desempenho;
+4. confirme a licença antes de adicionar ou substituir arquivos comerciais.
 
 ## Tamanhos dos títulos
 

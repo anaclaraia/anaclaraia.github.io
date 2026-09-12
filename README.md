@@ -68,6 +68,7 @@ https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d
 - `_includes/post-card.html`: listagem reutilizável.
 - `index.html`, `sobre.html`, `tisha-news.html`, `404.html`: páginas públicas.
 - `assets/css/style.css`: estrutura dos componentes, responsividade, foco e impressão.
+- `assets/css/whitney-ssm.css`: fontes Whitney SSm licenciadas, Twilio Sans Mono e Buffalo, servidas localmente.
 - `assets/css/theme.css`: tokens fáceis de editar para fonte, paleta Twilio, escala H1–H6 e raio de 4 px.
 - `_data/navigation.yml`: links do menu principal, editáveis sem tocar no HTML.
 - `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`: SVGs originais locais.
@@ -77,7 +78,7 @@ https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d
 
 ### Acessibilidade e privacidade
 
-HTML semântico, idioma pt-BR, link de pular conteúdo, foco visível, mídia responsiva, redução de movimento e indicações de nova aba. A família Whitney SSm é apenas declarada e depende de uma licença/instalação válida; os fallbacks são Helvetica Neue, Helvetica e Arial. O site usa Google Analytics e um JavaScript local mínimo para o menu móvel. O canal WhatsApp é um link externo e segue as políticas do próprio serviço.
+HTML semântico, idioma pt-BR, link de pular conteúdo, foco visível, mídia responsiva, redução de movimento e indicações de nova aba. Os arquivos licenciados Whitney SSm são servidos pelo próprio domínio, com Helvetica Neue, Helvetica e Arial como fallbacks. O site usa Google Analytics e um JavaScript local mínimo para o menu móvel. O canal WhatsApp é um link externo e segue as políticas do próprio serviço.
 
 ### Validação desta entrega
 
