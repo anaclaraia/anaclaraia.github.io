@@ -1,0 +1,21 @@
+/* Formulário Clara News / Listmonk */
+.newsletter-card{margin-top:36px;padding:30px;border-radius:4px;background:#fff;color:var(--twilio-ink);box-shadow:0 18px 48px rgba(0,13,37,.2)}
+.newsletter-card .newsletter-eyebrow{margin:0 0 8px;color:var(--twilio-red-dark);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.newsletter-card h3{margin:0 0 12px;color:var(--twilio-ink)}
+.newsletter-card>p:not(.newsletter-eyebrow){margin:0 0 22px;color:var(--twilio-gray-700);font-size:16px;line-height:25px}
+.listmonk-form{display:grid;gap:10px}
+.listmonk-form>label:not(.newsletter-list){margin-top:4px;color:var(--twilio-ink);font-size:13px;font-weight:700}
+.listmonk-form>label span{color:var(--twilio-gray-400);font-weight:400}
+.listmonk-form input[type="email"],.listmonk-form input[type="text"]{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--twilio-gray-300);border-radius:4px;background:#fff;color:var(--twilio-ink);font:inherit;font-size:16px}
+.listmonk-form input::placeholder{color:#69728b}
+.listmonk-form input:focus-visible{outline:3px solid var(--twilio-blue-light);outline-offset:2px;border-color:var(--twilio-blue)}
+.newsletter-list{display:flex;align-items:flex-start;gap:11px;margin:8px 0 0;padding:13px;border:1px solid var(--twilio-gray-100);border-radius:4px;background:var(--twilio-gray-50);cursor:pointer}
+.newsletter-list input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--twilio-blue)}
+.newsletter-list span{display:grid;color:var(--twilio-ink)!important}
+.newsletter-list strong{font-size:15px}.newsletter-list small{color:var(--twilio-gray-700);font-size:13px}
+.listmonk-form .newsletter-privacy{margin:2px 0 8px;color:var(--twilio-gray-700);font-size:12px;line-height:18px}
+.listmonk-form input[type="submit"]{min-height:50px;padding:0 24px;border:0;border-radius:999px;background:var(--twilio-blue);color:#fff;font:700 15px/1 var(--font-twilio);cursor:pointer;transition:background .2s ease,transform .2s ease}
+.listmonk-form input[type="submit"]:hover{background:var(--twilio-blue-dark);transform:translateY(-1px)}
+.news-page .newsletter-card{max-width:680px;margin:48px auto 0;border:1px solid var(--twilio-gray-100);box-shadow:0 16px 42px rgba(0,13,37,.1)}
+@media(max-width:760px){.newsletter-card{padding:24px 20px}.newsletter-card>p:not(.newsletter-eyebrow){font-size:15px;line-height:24px}.listmonk-form input[type="submit"]{width:100%}}
+@media(prefers-reduced-motion:reduce){.listmonk-form input[type="submit"]{transition:none}}

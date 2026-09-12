@@ -7,12 +7,10 @@ layout: default
       <p class="eyebrow">Inteligência artificial · Tecnologia · Pessoas</p>
       <h1>Ideias que aproximam <span>tecnologia</span> e pessoas.</h1>
       <p class="hero-description">Um blog para entender a inteligência artificial sem ruído: notícias verificadas, análises claras e uma perspectiva genuinamente humana.</p>
-      <div class="hero-actions"><a class="button primary" href="{{ '/blog.html' | relative_url }}">Explorar o blog <span aria-hidden="true">→</span></a><a class="button ghost" href="#tisha-news">Conhecer a Tisha News</a></div>
+      <div class="hero-actions"><a class="button primary" href="{{ '/blog.html' | relative_url }}">Explorar o blog <span aria-hidden="true">→</span></a><a class="button ghost" href="#clara-news">Conhecer a Clara News</a></div>
     </div>
-    <div class="hero-visual" aria-label="Representação visual de Ana Clara conectada a ideias e tecnologia">
-      <img src="{{ '/assets/images/ana-clara-portrait.svg' | relative_url }}" width="620" height="620" alt="Retrato ilustrado de Ana Clara em meio a conexões digitais">
-      <div class="signal-card signal-top"><span class="pulse"></span><strong>Contexto humano</strong><small>para decisões melhores</small></div>
-      <div class="signal-card signal-bottom"><span class="code-mark">AI</span><strong>Clareza primeiro</strong><small>tecnologia sem complicação</small></div>
+    <div class="hero-visual" aria-label="Representação visual da Clara News conectando pessoas e tecnologia">
+      <img src="{{ '/assets/images/clara-news-continuity.svg' | relative_url }}" width="620" height="620" alt="Ilustração de uma pessoa usando um computador com cartões digitais da Clara News">
     </div>
   </div>
 </section>
@@ -21,7 +19,7 @@ layout: default
   <div class="wrap">
     <div class="section-lead centered"><p class="eyebrow light">Conteúdo que faz sentido</p><h2 id="intro-title">Mais contexto. Menos ruído.</h2><p>Informação útil para acompanhar o presente e pensar o futuro com autonomia.</p></div>
     <div class="topic-grid">
-      <article><span class="topic-number">01</span><h3>Notícias verificadas</h3><p>Os acontecimentos mais relevantes de IA e tecnologia, organizados com fontes e contexto.</p><a href="{{ '/#tisha-news' | relative_url }}">Ver Tisha News <span aria-hidden="true">↗</span></a></article>
+      <article><span class="topic-number">01</span><h3>Notícias verificadas</h3><p>Os acontecimentos mais relevantes de IA e tecnologia, organizados com fontes e contexto.</p><a href="{{ '/#clara-news' | relative_url }}">Ver Clara News <span aria-hidden="true">↗</span></a></article>
       <article><span class="topic-number">02</span><h3>Análises acessíveis</h3><p>Conceitos complexos traduzidos em ideias claras, sem perder profundidade ou precisão.</p><a href="{{ '/blog.html' | relative_url }}">Ler publicações <span aria-hidden="true">→</span></a></article>
       <article><span class="topic-number">03</span><h3>Perspectiva humana</h3><p>O impacto real da tecnologia nas pessoas, no trabalho, nos negócios e nas relações.</p><a href="{{ '/sobre/' | relative_url }}">Sobre o projeto <span aria-hidden="true">→</span></a></article>
     </div>
@@ -42,10 +40,10 @@ layout: default
   </div>
 </section>
 
-<section class="tisha-section" id="tisha-news" aria-labelledby="news-heading">
-  <div class="wrap tisha-grid">
-    <div><p class="eyebrow light">Uma editoria do blog</p><h2 id="news-heading">Tisha<br><em>News.</em></h2></div>
-    <div class="tisha-copy"><p class="tisha-kicker">Informação rápida.<br>Responsabilidade sempre.</p><p>Tisha News acompanha as mudanças em inteligência artificial e tecnologia, separando fatos de especulação.</p>{% assign news_posts = site.posts | where_exp: 'post', 'post.tags contains "tisha-news"' %}{% if news_posts.size > 0 %}<a class="button light-button" href="{{ '/tisha-news/' | relative_url }}">Acessar notícias <span aria-hidden="true">→</span></a>{% else %}<span class="status-label">Em preparação</span>{% endif %}</div>
+<section class="clara-section" id="clara-news" aria-labelledby="news-heading">
+  <div class="wrap clara-grid">
+    <div><p class="eyebrow light">Uma editoria do blog</p><h2 id="news-heading">Clara<br><em>News.</em></h2></div>
+    <div class="clara-copy"><p class="clara-kicker">Informação rápida.<br>Responsabilidade sempre.</p><p>Clara News acompanha as mudanças em inteligência artificial e tecnologia, separando fatos de especulação.</p>{% assign news_posts = site.posts | where_exp: 'post', 'post.tags contains "clara-news"' %}{% if news_posts.size > 0 %}<a class="button light-button" href="{{ '/clara-news/' | relative_url }}">Acessar notícias <span aria-hidden="true">→</span></a>{% else %}<span class="status-label">Em preparação</span>{% endif %}{% include newsletter-form.html %}</div>
   </div>
 </section>
 

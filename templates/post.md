@@ -2,7 +2,7 @@
 title: "Título da publicação"
 date: 2026-01-01 09:00:00 -0300
 description: "Descrição breve e factual do conteúdo."
-tags: [tisha-news, inteligência artificial]
+tags: [clara-news, inteligência artificial]
 # image: /assets/images/nome-da-imagem.jpg
 ---
 

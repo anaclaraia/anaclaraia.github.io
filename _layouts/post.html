@@ -12,7 +12,7 @@ layout: default
   <div class="prose">{{ content }}</div>
   <footer class="post-footer">
     {% assign labels = page.categories | concat: page.tags | uniq %}
-    {% if labels.size > 0 %}<div class="post-categories"><h2>Categorias</h2><ul>{% for label in labels %}<li>{{ label | replace: 'tisha-news', 'Tisha News' | escape }}</li>{% endfor %}</ul></div>{% endif %}
+    {% if labels.size > 0 %}<div class="post-categories"><h2>Categorias</h2><ul>{% for label in labels %}<li>{{ label | replace: 'clara-news', 'Clara News' | escape }}</li>{% endfor %}</ul></div>{% endif %}
     <div class="post-follow"><p>Quer acompanhar as próximas publicações?</p><a class="button" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Acompanhar no WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></div>
     <a class="text-link small" href="{{ '/' | relative_url }}">← Voltar ao blog</a>
   </footer>

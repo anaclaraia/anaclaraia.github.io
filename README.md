@@ -43,13 +43,13 @@ Front matter suficiente (o layout `post` já é aplicado por padrão):
 title: "Título da publicação"
 date: 2026-01-01 09:00:00 -0300
 description: "Descrição breve e factual."
-tags: [tisha-news, inteligência artificial]
+tags: [clara-news, inteligência artificial]
 # image: /assets/images/nome-da-imagem.jpg
 ```
 
 Envolva o YAML em delimitadores `---` no arquivo. Não é preciso definir `layout`, autor ou categorias. `image` é opcional; o campo adicional `image_alt` pode ser usado para uma descrição acessível mais específica. Sem ele, usa-se o título. Use caminhos locais iniciados em `/assets/` ou URLs HTTPS para imagens externas.
 
-Os temas de `tags` são exibidos como **Categorias no rodapé visível do artigo**, depois do conteúdo. Se `categories` também existir, seus valores serão reunidos e deduplicados. A tag literal `tisha-news` faz a publicação aparecer tanto na seção da homepage quanto em `/tisha-news/`. Tisha News é uma seção, não uma atribuição automática de autoria. Nenhum autor é inventado ou preenchido pelo layout.
+Os temas de `tags` são exibidos como **Categorias no rodapé visível do artigo**, depois do conteúdo. Se `categories` também existir, seus valores serão reunidos e deduplicados. A tag literal `clara-news` faz a publicação aparecer tanto na seção da homepage quanto em `/clara-news/`. Clara News é uma seção, não uma atribuição automática de autoria. Nenhum autor é inventado ou preenchido pelo layout.
 
 O blog nasce sem artigos publicados. O modelo fica fora da build por `exclude`; não existe notícia ou áudio de demonstração publicado. Datas futuras e rascunhos não aparecem na build normal. Datas no feed usam RFC 822; na interface, dia/mês/ano. O fuso do site é `America/Sao_Paulo`.
 
@@ -66,12 +66,13 @@ https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d
 - `_config.yml`: identidade, URLs, fuso, defaults e exclusões.
 - `_layouts/default.html`, `home.html`, `post.html`: estrutura sem JavaScript obrigatório.
 - `_includes/post-card.html`: listagem reutilizável.
-- `index.html`, `sobre.html`, `tisha-news.html`, `404.html`: páginas públicas.
+- `index.html`, `sobre.html`, `clara-news.html`, `404.html`: páginas públicas.
 - `assets/css/style.css`: estrutura dos componentes, responsividade, foco e impressão.
 - `assets/css/whitney-ssm.css`: fontes Whitney SSm licenciadas, Twilio Sans Mono e Buffalo, servidas localmente.
 - `assets/css/theme.css`: tokens fáceis de editar para fonte, paleta Twilio, escala H1–H6 e raio de 4 px.
+- `assets/css/newsletter.css`: apresentação responsiva do formulário Listmonk da Clara News.
 - `_data/navigation.yml`: links do menu principal, editáveis sem tocar no HTML.
-- `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`: SVGs originais locais.
+- `assets/images/monogram.svg`, `connections.svg`, `ana-clara-portrait.svg`, `clara-news-continuity.svg`: SVGs originais locais.
 - `GUIA-DE-ATUALIZACAO.md`: instruções para atualizar tudo diretamente pelo GitHub.
 - `robots.txt`, `sitemap.xml`, `llms.txt`: descoberta por buscadores, redes sociais e agentes de IA.
 - `feed.xml`: RSS 2.0 em Liquid, até 20 publicações, sem plugin extra.

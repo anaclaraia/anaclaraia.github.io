@@ -12,7 +12,7 @@ Blog público em português do Brasil sobre inteligência artificial, tecnologia
 
 - [Página inicial]({{ '/' | absolute_url }}): apresentação do blog e publicações recentes.
 - [Blog]({{ '/blog.html' | absolute_url }}): índice de todas as publicações.
-- [Tisha News]({{ '/tisha-news/' | absolute_url }}): notícias verificadas de inteligência artificial e tecnologia.
+- [Clara News]({{ '/clara-news/' | absolute_url }}): notícias verificadas de inteligência artificial e tecnologia.
 - [Valores]({{ '/valores/' | absolute_url }}): princípios de Gean Ramos que orientam este espaço.
 - [Sobre]({{ '/sobre/' | absolute_url }}): propósito e contexto do blog.
 - [Feed RSS]({{ '/feed.xml' | absolute_url }}): atualizações em formato RSS.
