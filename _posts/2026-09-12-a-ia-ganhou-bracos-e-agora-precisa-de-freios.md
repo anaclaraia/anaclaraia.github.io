@@ -3,6 +3,7 @@ title: "A IA ganhou braços — e agora precisa de freios"
 date: 2026-09-12 12:00:00 -03:00
 description: "Agentes autônomos avançam sobre tarefas reais e tornam permissões, supervisão, infraestrutura e aprendizagem questões urgentes."
 tags:
+  - clara-news
   - inteligência artificial
   - agentes autônomos
   - segurança digital
