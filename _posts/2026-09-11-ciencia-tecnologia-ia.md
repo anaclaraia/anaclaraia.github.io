@@ -2,11 +2,12 @@
 title: "Ciência, Tecnologia e IA: 4 Dias Que Redesenham o Futuro"
 date: 2026-09-11 00:30:00 -03:00
 description: "Do iPhone dobrável aos avanços em IA generativa: um panorama claro das notícias que importam — e o que elas significam para nós."
-tags: [clara-news, inteligência-artificial, tecnologia, ciência]
-image: "https://db00ytxhy7e1q.cloudfront.net/2024/12/OFICIAL-Dimensao-Wordpress-2.jpg"
+tags: [tisha-news, inteligência-artificial, tecnologia, ciência]
+image: ""
 ---
+<audio controls src="/assets/media/2026-09-11-ciencia-tecnologia-e-ia-4-dias-que-redesenham-o-futuro.mp3" preload="metadata"></audio>
 
-<audio controls src="/assets/media/ciencia-tecnologia-ia.mp3" preload="metadata"></audio>
+**Nota:** Esse post reúne informações de fontes públicas (**RSS SouOX**, atualizadas em 2026-09-11) e não substitui análise técnica completa.
 
 ## O que aconteceu nos últimos dias
 
@@ -46,6 +47,10 @@ Isso importa porque tecnologia sem base científica sólida é apenas marketing.
 
 ---
 
-**Categoria:** *Ciência, Tecnologia e IA**
+**Categoria:** *Ciência, Tecnologia e IA*
+
+**Fonte:** RSS SouOX (atualizado em 2026-09-11 08:23 UTC). Conteúdo original mantido sem edição.
+
+**Áudio do post (leitura do texto):** [Ouvir](/assets/media/2026-09-11-ciencia-tecnologia-e-ia-4-dias-que-redesenham-o-futuro.mp3)
 
 👉 Acompanhe novidades pelo WhatsApp: [Canal Oficial](https://www.whatsapp.com/channel/0029VaiPYBPLo4heVf0U3u2d)
