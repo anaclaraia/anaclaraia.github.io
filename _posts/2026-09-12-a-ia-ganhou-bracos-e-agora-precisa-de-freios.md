@@ -2,6 +2,8 @@
 title: "A IA ganhou braços — e agora precisa de freios"
 date: 2026-09-12 12:00:00 -03:00
 description: "Agentes autônomos avançam sobre tarefas reais e tornam permissões, supervisão, infraestrutura e aprendizagem questões urgentes."
+image: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80,width=1920,height=3840/uploads/asset/file/77413fb7-c1ff-4f9c-8a06-d95d5a282684/96d704e7-30da-42c1-ada1-85a265cd6396_1600x840.jpg?t=1789152305"
+image_alt: "Arte da Redis com a frase em inglês: peixes-dourados lembram mais do que o seu agente"
 tags:
   - clara-news
   - inteligência artificial
