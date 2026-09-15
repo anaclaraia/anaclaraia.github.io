@@ -11,6 +11,9 @@ tags:
 image: "/assets/images/whatsapp-business-api-capa.png"
 ---
 
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio desta publicação" src="{{ '/assets/media/whatsapp-business-cobranca-api.ogg' | relative_url }}">Seu navegador não suporta áudio.</audio>
+
 # WhatsApp Business terá cobrança por respostas na API em outubro
 
 A notícia de que o WhatsApp Business “será cobrado” assusta — mas o detalhe mais importante está justamente nessa frase: **não é o aplicativo de celular que está entrando na fila do caixa**.
