@@ -1,6 +1,6 @@
 ---
 title: "27 mundos pequenos no escuro além de Netuno"
-date: 2026-09-15 11:00:00 -0300
+date: 2026-09-14 11:00:00 -0300
 image: /assets/images/capa-27-mundos.png
 description: "Dois estudos usam JWST e Hubble para enxergar objetos transnetunianos pequenos e testar o que ainda sabemos sobre a periferia do Sistema Solar."
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "A nova Siri chegou, mas não para todo mundo"
-date: 2026-09-15 12:00:00 -0300
+date: 2026-09-14 12:00:00 -0300
 image: /assets/images/capa-siri-ios27.png
 description: "O iOS 27 começa a receber a Siri AI em beta, com contexto pessoal, ações em apps e recursos de IA. A disponibilidade depende do idioma, aparelho e região."
 tags:
