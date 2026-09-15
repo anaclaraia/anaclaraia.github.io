@@ -1,6 +1,6 @@
 ---
 title: "WhatsApp Business terá cobrança por respostas na API em outubro"
-date: 2026-09-15 10:00:00 -03:00
+date: 2026-09-15 07:00:00 -03:00
 description: "A Meta deve cobrar mensagens de serviço na API do WhatsApp Business a partir de outubro. Entenda quem será afetado e como preparar a operação."
 tags:
   - WhatsApp Business
