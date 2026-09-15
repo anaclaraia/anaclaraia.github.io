@@ -8,6 +8,7 @@ tags:
   - atendimento
   - tecnologia
   - empresas
+image: "/assets/images/whatsapp-business-api-capa.png"
 ---
 
 # WhatsApp Business terá cobrança por respostas na API em outubro
