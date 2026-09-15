@@ -8,6 +8,7 @@ tags:
   - comunicação interna
   - Grupo OX
   - 2026
+image: "/assets/images/datas-comemorativas-2026-rh.png"
 ---
 
 <p><strong>Áudio do post:</strong></p>
