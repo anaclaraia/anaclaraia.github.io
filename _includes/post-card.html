@@ -1,4 +1,26 @@
-<article class="post-card{% if include.post.image %} has-image{% endif %}">
-  {% if include.post.image %}<a class="post-thumbnail" href="{{ include.post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ include.post.image | relative_url }}" alt="" width="240" height="160" loading="lazy"></a>{% endif %}
-  <div><time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%d/%m/%Y' }}</time><h3><a href="{{ include.post.url | relative_url }}">{{ include.post.title | escape }}</a></h3>{% if include.post.description %}<p>{{ include.post.description | escape }}</p>{% endif %}<a class="text-link small" href="{{ include.post.url | relative_url }}">Ler publicação <span aria-hidden="true">→</span><span class="sr-only">: {{ include.post.title | escape }}</span></a></div>
+{% assign card_post = include.post %}
+{% assign is_featured = include.featured %}
+<article class="post-card{% if card_post.image %} has-image{% endif %}{% if is_featured %} post-card--featured{% endif %}">
+  {% if card_post.image %}
+  <a class="post-thumbnail" href="{{ card_post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ card_post.image | relative_url }}"
+         alt=""
+         width="{{ card_post.image_width | default: '1672' }}"
+         height="{{ card_post.image_height | default: '941' }}"
+         loading="lazy">
+  </a>
+  {% endif %}
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <time datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: '%d/%m/%Y' }}</time>
+      {% assign card_labels = card_post.categories | concat: card_post.tags | uniq %}
+      {% if card_labels.size > 0 %}
+      {% assign first_label = card_labels | first %}
+      <span class="post-card-tag">{{ first_label | replace: 'clara-news', 'Clara News' | replace: 'tisha-news', 'Tisha News' | replace: '-', ' ' | escape }}</span>
+      {% endif %}
+    </div>
+    <h3><a href="{{ card_post.url | relative_url }}">{{ card_post.title | escape }}</a></h3>
+    {% if card_post.description %}<p>{{ card_post.description | escape }}</p>{% endif %}
+    <a class="text-link small" href="{{ card_post.url | relative_url }}">Ler publicação <span aria-hidden="true">→</span><span class="sr-only">: {{ card_post.title | escape }}</span></a>
+  </div>
 </article>

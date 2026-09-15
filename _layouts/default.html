@@ -29,8 +29,19 @@
   <meta property="og:image" content="{{ meta_image | absolute_url }}">
   <meta property="og:image:secure_url" content="{{ meta_image | absolute_url }}">
   <meta property="og:image:alt" content="{{ page.image_alt | default: meta_title | escape }}">
-  {% unless page.image %}<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">{% endunless %}
-  {% if page.layout == 'post' %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% for tag in page.tags %}<meta property="article:tag" content="{{ tag | escape }}">{% endfor %}{% endif %}
+  {% if page.image %}
+  <meta property="og:image:width" content="{{ page.image_width | default: '1672' }}">
+  <meta property="og:image:height" content="{{ page.image_height | default: '941' }}">
+  {% else %}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {% endif %}
+  {% if page.layout == 'post' %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}">
+  <meta property="article:author" content="{{ meta_author | escape }}">
+  {% for tag in page.tags %}<meta property="article:tag" content="{{ tag | escape }}">{% endfor %}
+  {% endif %}
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ meta_title | escape }}">
@@ -50,7 +61,7 @@
     "image": {{ meta_image | absolute_url | jsonify }},
     "isPartOf": {"@type": "WebSite", "name": {{ site.title | jsonify }}, "url": {{ site.url | jsonify }}},
     "publisher": {"@type": "Organization", "name": {{ site.publisher_name | jsonify }}, "url": {{ site.url | jsonify }}},
-    "author": {"@type": "Organization", "name": {{ meta_author | jsonify }}}{% if page.layout == 'post' %},
+    "author": {"@type": "{% if page.layout == 'post' %}Person{% else %}Organization{% endif %}", "name": {{ meta_author | jsonify }}}{% if page.layout == 'post' %},
     "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
     "dateModified": {{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
     "mainEntityOfPage": {"@type": "WebPage", "@id": {{ page.url | absolute_url | jsonify }}}{% endif %}
@@ -86,7 +97,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div><a class="footer-brand" href="{{ '/' | relative_url }}">Ana Clara<span>.ia</span></a><p>Inteligência artificial com clareza, contexto e espaço para o humano.</p></div>
-      <nav aria-label="Links do rodapé"><a href="{{ '/blog.html' | relative_url }}">Blog</a><a href="{{ '/sobre/' | relative_url }}">Sobre</a><a href="{{ '/feed.xml' | relative_url }}">Feed RSS</a><a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></nav>
+      <nav aria-label="Links do rodapé"><a href="{{ '/blog.html' | relative_url }}">Blog</a><a href="{{ '/clara-news/' | relative_url }}">Clara News</a><a href="{{ '/sobre/' | relative_url }}">Sobre</a><a href="{{ '/feed.xml' | relative_url }}">Feed RSS</a><a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></nav>
       {% include newsletter-form.html %}
       <p class="copyright">© {{ 'now' | date: '%Y' }} Ana Clara.</p>
     </div>

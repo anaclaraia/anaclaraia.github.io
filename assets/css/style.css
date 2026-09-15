@@ -16,3 +16,99 @@
 @media(max-width:480px){body{font-size:16px}.wrap{width:calc(100% - 36px)}.hero-actions{display:grid}.hero-actions .button{width:100%}.hero-visual{margin-inline:-10px}.signal-card{min-width:178px;padding:11px}.signal-top{right:0}.signal-bottom{left:0}.story-art{min-height:360px}.story-copy h2{font-size:2.45rem}.section-heading{align-items:flex-start;flex-direction:column}.clara-kicker{font-size:1.7rem}.site-footer nav{display:grid;grid-template-columns:1fr 1fr}.page-shell,.post-shell{width:calc(100% - 36px)}.post-header h1,.page-header h1{font-size:2.8rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 @media print{.site-header,.site-footer,.hero-visual,.closing-cta,.post-follow,.skip-link{display:none}body{font-size:12pt}.wrap,.post-shell,.page-shell{width:100%}.prose p,.prose li,.post-description{color:#000}.post-shell{padding:0}}
+
+/* ===================================================
+   ADIÇÕES — hub da home, cards em destaque, blog
+   =================================================== */
+
+/* HUB DE SEÇÕES */
+.hub-section{padding:90px 0;background:var(--cream)}
+.hub-header{margin-bottom:48px}
+.hub-header h2{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:500;margin-top:0}
+.hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.hub-card{display:flex;flex-direction:column;gap:16px;padding:28px 24px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);text-decoration:none;color:var(--text);transition:border-color .2s ease,box-shadow .2s ease}
+.hub-card:hover{border-color:var(--red);box-shadow:0 8px 24px rgba(219,19,42,.08);color:var(--text)}
+.hub-card:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+.hub-icon{font-size:1.4rem;color:var(--red);line-height:1}
+.hub-card h3{margin:0 0 6px;font-size:1.15rem;font-weight:700;color:var(--ink)}
+.hub-card p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.6}
+.hub-arrow{margin-top:auto;font-size:1.1rem;color:var(--red);font-weight:800;align-self:flex-start}
+
+/* POST CARD — melhorias gerais */
+.post-card-body{display:flex;flex-direction:column;gap:10px}
+.post-card-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.post-card-meta time{font-size:.72rem;color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.post-card-tag{display:inline-flex;padding:3px 9px;border-radius:999px;background:var(--mist);border:1px solid var(--line);font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.post-card h3{margin:0;font-size:1.5rem;font-weight:600}
+.post-card h3 a{text-decoration:none}
+.post-card h3 a:hover{color:var(--red)}
+.post-card p{margin:0;color:var(--muted);font-size:.91rem;line-height:1.6}
+.post-card .text-link{margin-top:6px}
+
+/* CARD EM DESTAQUE (home) */
+.featured-section{padding:80px 0 20px;background:white}
+.featured-post-wrap .post-card--featured{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;border-top:3px solid var(--red);padding-top:32px}
+.post-card--featured .post-thumbnail{margin-bottom:0;border-radius:var(--radius);overflow:hidden}
+.post-card--featured .post-thumbnail img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.post-card--featured .post-card-body{padding-top:8px}
+.post-card--featured h3{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:600;line-height:1.1}
+.post-card--featured p{font-size:1rem;line-height:1.7}
+.post-card--featured .text-link{font-size:.9rem}
+
+/* BLOG — hero e seção de destaque */
+.blog-hero{padding:80px 0 56px}
+.blog-hero-inner{display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
+.blog-hero h1{font-size:clamp(3.8rem,8vw,7.3rem);font-weight:500}
+.blog-hero p:last-of-type{max-width:650px;margin-top:22px;color:var(--muted);font-size:1.1rem}
+.blog-rss-link{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-size:.8rem;font-weight:700;text-decoration:none;color:var(--muted);white-space:nowrap;flex-shrink:0;align-self:flex-end;margin-bottom:8px}
+.blog-rss-link:hover{border-color:var(--red);color:var(--red)}
+
+.blog-featured-section{padding:48px 0 80px;background:var(--cream)}
+.blog-section-label{margin-bottom:24px}
+.blog-featured-card{border-radius:var(--radius);overflow:hidden;background:white;display:grid;grid-template-columns:1fr 1fr;gap:0;box-shadow:0 2px 16px rgba(7,20,50,.08)}
+.blog-featured-card.has-image .blog-featured-body{padding:40px 44px}
+.blog-featured-card:not(.has-image) .blog-featured-body{padding:40px 44px;grid-column:1/-1;max-width:860px}
+.blog-featured-img{display:block;overflow:hidden}
+.blog-featured-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.blog-featured-card:hover .blog-featured-img img{transform:scale(1.025)}
+.blog-featured-body{display:flex;flex-direction:column;gap:16px;justify-content:center}
+.blog-featured-body h2{font-size:clamp(1.8rem,3vw,2.7rem);font-weight:600;line-height:1.1;margin:0}
+.blog-featured-body h2 a{text-decoration:none}
+.blog-featured-body h2 a:hover{color:var(--red)}
+.blog-featured-desc{color:var(--muted);font-size:1.02rem;line-height:1.65;margin:0}
+.blog-featured-body .text-link{margin-top:8px}
+
+.blog-post-list{padding-top:24px}
+.blog-index{padding-top:60px}
+.blog-index .section-heading h2{font-size:2rem}
+
+/* POST — meta linha com tags */
+.post-meta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:28px 0 10px}
+.post-tags-inline{display:flex;gap:7px;flex-wrap:wrap}
+.post-tag-pill{display:inline-flex;padding:4px 10px;border-radius:999px;background:var(--mist);border:1px solid var(--line);font-size:.69rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* RESPONSIVIDADE — hub e blog destaque */
+@media(max-width:950px){
+  .hub-grid{grid-template-columns:repeat(2,1fr)}
+  .blog-featured-card{grid-template-columns:1fr}
+  .blog-featured-img{max-height:380px}
+  .blog-featured-card.has-image .blog-featured-body{padding:28px 32px}
+  .featured-post-wrap .post-card--featured{grid-template-columns:1fr;gap:24px}
+  .blog-hero-inner{flex-direction:column;align-items:flex-start;gap:16px}
+}
+@media(max-width:760px){
+  .hub-section{padding:65px 0}
+  .hub-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .hub-card{padding:22px 18px;gap:12px}
+  .featured-section{padding:60px 0 10px}
+  .blog-featured-section{padding:36px 0 60px}
+  .blog-featured-card.has-image .blog-featured-body,.blog-featured-card:not(.has-image) .blog-featured-body{padding:24px 22px}
+  .blog-featured-body h2{font-size:1.7rem}
+  .blog-hero{padding:60px 0 40px}
+}
+@media(max-width:480px){
+  .hub-grid{grid-template-columns:1fr}
+  .hub-card{flex-direction:row;align-items:flex-start;gap:14px}
+  .hub-icon{font-size:1.1rem;margin-top:3px;flex-shrink:0}
+  .hub-arrow{display:none}
+}

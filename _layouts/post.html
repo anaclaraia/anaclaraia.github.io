@@ -3,17 +3,41 @@ layout: default
 ---
 <article class="post-shell wrap">
   <header class="post-header">
-    <a class="text-link small" href="{{ '/' | relative_url }}">← Todas as publicações</a>
-    <p class="eyebrow post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time></p>
+    <a class="text-link small" href="{{ '/blog.html' | relative_url }}">← Todas as publicações</a>
+    <div class="post-meta-row">
+      <p class="eyebrow post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time></p>
+      {% assign post_labels = page.categories | concat: page.tags | uniq %}
+      {% if post_labels.size > 0 %}
+      <div class="post-tags-inline">
+        {% for label in post_labels limit:3 %}<span class="post-tag-pill">{{ label | replace: 'clara-news', 'Clara News' | replace: '-', ' ' | escape }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
     <h1>{{ page.title | escape }}</h1>
     {% if page.description %}<p class="post-description">{{ page.description | escape }}</p>{% endif %}
   </header>
-  {% if page.image %}<figure class="post-cover"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | escape }}" width="1200" height="675"></figure>{% endif %}
+  {% if page.image %}
+  <figure class="post-cover">
+    <img src="{{ page.image | relative_url }}"
+         alt="{{ page.image_alt | default: page.title | escape }}"
+         width="{{ page.image_width | default: '1672' }}"
+         height="{{ page.image_height | default: '941' }}"
+         loading="eager">
+  </figure>
+  {% endif %}
   <div class="prose">{{ content }}</div>
   <footer class="post-footer">
     {% assign labels = page.categories | concat: page.tags | uniq %}
-    {% if labels.size > 0 %}<div class="post-categories"><h2>Categorias</h2><ul>{% for label in labels %}<li>{{ label | replace: 'clara-news', 'Clara News' | escape }}</li>{% endfor %}</ul></div>{% endif %}
-    <div class="post-follow"><p>Quer acompanhar as próximas publicações?</p><a class="button" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Acompanhar no WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></div>
-    <a class="text-link small" href="{{ '/' | relative_url }}">← Voltar ao blog</a>
+    {% if labels.size > 0 %}
+    <div class="post-categories">
+      <h2>Categorias</h2>
+      <ul>{% for label in labels %}<li>{{ label | replace: 'clara-news', 'Clara News' | replace: '-', ' ' | escape }}</li>{% endfor %}</ul>
+    </div>
+    {% endif %}
+    <div class="post-follow">
+      <p>Quer acompanhar as próximas publicações?</p>
+      <a class="button" href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Acompanhar no WhatsApp <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+    </div>
+    <a class="text-link small" href="{{ '/blog.html' | relative_url }}">← Voltar ao blog</a>
   </footer>
 </article>
