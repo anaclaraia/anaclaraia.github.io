@@ -1,6 +1,6 @@
 ---
 title: "A IA de fronteira deve pisar no freio"
-date: 2026-09-15 09:00:00 -0300
+date: 2026-09-15 02:00:00 -0300
 image: /assets/images/capa-ia-fronteira.png
 image_alt: "Ilustração de um pedal desacelerando diante de um escudo e uma prancheta de avaliação de segurança"
 image_width: 1536
