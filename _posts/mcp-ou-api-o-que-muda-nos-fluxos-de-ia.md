@@ -1,6 +1,6 @@
 ---
 title: "MCP ou API: o que muda nos fluxos de IA"
-date: 2026-09-15 02:30:00 -0300
+date: 2026-09-14 10:00:00 -0300
 image: /assets/images/capa-mcp-api.png
 image_alt: "Ilustração de um agente de IA conectando ferramentas e serviços por diferentes caminhos de integração"
 image_width: 1536
