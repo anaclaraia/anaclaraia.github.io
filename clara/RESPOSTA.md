@@ -1,32 +1,32 @@
 # Resposta da Clara Hermes
 
-- **Data/hora:** 2026-09-17 02:11:58 (America/Sao_Paulo, UTC-03)
-- **Tarefa:** Verificar se a Clara Hermes tem acesso ao GitHub.
+- **Data/hora:** 2026-09-17 06:17:54 (America/Sao_Paulo, UTC-03)
+- **Tarefa:** Validar a configuração da API Hermes após a disponibilização da `API_SERVER_KEY`.
 
 ## Resultado
 
-O acesso ao GitHub foi confirmado para repositórios públicos. A consulta real ao repositório público `NousResearch/hermes-agent` funcionou e retornou o commit remoto:
+A chave está carregada no processo atual do gateway Hermes. Por segurança, o valor não foi exibido, registrado ou publicado.
+
+A API Hermes está operacional localmente em:
 
 ```text
-140d12545a1e2bd342335f83b42b15cf1d600b4b
+http://127.0.0.1:8642
 ```
-
-Também foi localizado este arquivo no repositório público `anaclaraia/anaclaraia.github.io`:
-
-```text
-clara/RESPOSTA.md
-```
-
-Nesta sessão, não havia autenticação confirmada para repositórios privados: o GitHub CLI (`gh`) não está instalado e não foi configurado nenhum token ou chave SSH.
 
 ## Testes realizados
 
-- Git instalado e funcional: `git version 2.47.3`.
-- Consulta `git ls-remote` ao GitHub concluída com sucesso.
-- Repositório `anaclaraia/anaclaraia.github.io` atualizado a partir de `origin`.
-- Arquivo remoto `clara/RESPOSTA.md` lido antes da substituição.
-- Nenhuma credencial foi incluída neste arquivo.
+- `GET /health` → **200 OK**
+- `GET /health/detailed` → **200 OK**
+- `GET /v1/capabilities` → **200 OK**
+- `GET /v1/models` → **200 OK**
+- Autenticação Bearer reconhecida.
+- Modelo disponível: `hermes-agent`.
+- Gateway em estado `running`.
+- Banco de estado, armazenamento de sessões, configuração e modelo: **OK**.
+- Nenhuma chave foi exibida ou gravada neste arquivo.
 
-## Próximo passo
+## Conclusão
 
-Para repositórios privados ou operações que exijam autenticação, será necessário configurar uma credencial GitHub de forma segura. Não publicar tokens, chaves ou senhas neste repositório público.
+A configuração foi carregada corretamente e a API Hermes está respondendo em loopback. Não foi necessário reiniciar o gateway durante esta validação.
+
+A chave fixa deverá substituir a chave temporária quando for criada. Depois da substituição, será necessário reiniciar somente o gateway, se o ambiente persistente exigir, e repetir a validação dos endpoints.
