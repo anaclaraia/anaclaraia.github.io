@@ -1,3 +1,186 @@
+# Relatório consolidado — configuração da ponte Hermes/Cloudflare
+
+- **Data:** 2026-09-17
+- **Período:** aproximadamente 06:00 em diante, America/Sao_Paulo (UTC-03)
+- **Objetivo:** preparar e testar temporariamente a exposição HTTPS da API Hermes para a futura ponte Google Apps Script/Sheets → Cloudflare → Hermes.
+- **Repositório:** `anaclaraia/anaclaraia.github.io`
+- **Segredos:** valores de tokens, chaves OAuth e credenciais foram omitidos e registrados apenas como `[REDACTED]` quando necessário.
+
+## 1. Resultado executivo
+
+A API Hermes foi configurada e validada localmente em `127.0.0.1:8642`. O Tunnel `clara-hermes-api` foi criado/configurado no painel Cloudflare, o hostname `api.50x.com.br` passou a usar o Tunnel e o conector temporário `cloudflared` foi iniciado.
+
+O primeiro bloqueio externo foi o Cloudflare Browser Integrity Check (BIC), que devolvia `403/1010` para chamadas automatizadas. A causa foi confirmada nos eventos e foi implantada uma regra limitada ao hostname da API para pular somente o BIC. As proteções relacionadas ao Listmonk na VPS nova da Locaweb permaneceram ativas.
+
+Após a correção do BIC, o erro externo passou a ser `HTTP 503`. A causa foi confirmada nos logs do `cloudflared`: não havia regras de ingress carregadas no processo iniciado com o token, portanto o processo retornava `503` para todas as requisições. A API local continuava respondendo `HTTP 200`.
+
+**Estado final deste relatório:** DNS e Tunnel alcançáveis; BIC resolvido; API local funcionando; endpoint externo ainda pendente de `HTTP 200` porque a configuração de ingress do Tunnel precisa ser carregada no mesmo Tunnel usado pelo conector.
+
+## 2. API Hermes
+
+Foi ajustado o ambiente do Hermes para disponibilizar o `api_server` somente no loopback:
+
+```yaml
+api_server:
+  enabled: true
+  host: 127.0.0.1
+  port: 8642
+```
+
+Foi criado backup prévio da configuração. A ausência inicial de `API_SERVER_KEY` foi diagnosticada pela mensagem `API_SERVER_KEY is required`; depois a chave foi configurada no ambiente efetivo sem ser exposta e o gateway foi reiniciado uma vez, sem reiniciar a VPS inteira.
+
+Testes locais confirmados:
+
+- `GET http://127.0.0.1:8642/health` → `HTTP 200`;
+- `POST /v1/chat/completions` → `HTTP 200`;
+- `model: hermes-agent` aceito;
+- `messages` aceito;
+- `stream: false` aceito;
+- resposta em `choices[0].message.content`;
+- continuidade confirmada com `X-Hermes-Session-Id`.
+
+A porta `8642` permaneceu privada, sem exposição direta à Internet. A porta `8643` existente foi identificada como porta de métricas, não como a API Hermes.
+
+## 3. Google Workspace e contrato da ponte
+
+Foi configurado o OAuth oficial do Google, com os arquivos locais protegidos e sem publicação de valores sensíveis. Foram localizados e atualizados os documentos de coordenação da Clara no Drive, e as gravações foram verificadas.
+
+A Gmail API foi ativada e o acesso aos rascunhos foi confirmado. Foi criado um baseline de 17 rascunhos para considerar somente mensagens novas ou editadas. A rotina temporária de monitoramento foi configurada sem envio automático.
+
+O contrato técnico definido para a futura ponte é:
+
+```text
+Google Sheets → Apps Script → endpoint HTTPS autenticado → Hermes
+```
+
+O Apps Script deverá chamar internamente `/v1/chat/completions`, mantendo a `API_SERVER_KEY` somente no lado protegido do gateway/Worker. A primeira prova ponta a ponta deverá usar uma única linha `PENDENTE` e confirmar `PENDENTE → PROCESSANDO → RESPONDIDO`.
+
+Também foram documentadas idempotência por `request_id`, recuperação de linhas presas em `PROCESSANDO`, limite inicial de tentativas e uso futuro de Durable Objects ou mecanismo equivalente.
+
+## 4. Cloudflare Tunnel e DNS
+
+Foi escolhido o Tunnel existente:
+
+```text
+Nome: clara-hermes-api
+ID: 1e2491c5-0545-44a5-8c76-56c8528c1152
+```
+
+A rota pública configurada no painel foi planejada para:
+
+```text
+api.50x.com.br → http://127.0.0.1:8642
+```
+
+O registro A de teste do hostname foi removido e substituído pelo CNAME do Tunnel, com proxy Cloudflare ativo:
+
+```text
+api.50x.com.br → 1e2491c5-0545-44a5-8c76-56c8528c1152.cfargotunnel.com
+```
+
+A zona `50x.com.br` permaneceu ativa, e os demais registros DNS foram preservados, incluindo os hostnames de aplicações/streaming e os registros MX, SPF, DKIM e DMARC. O DNS público passou a responder por endereços da Cloudflare.
+
+## 5. cloudflared
+
+O binário foi instalado em uma pasta gravável do ambiente atual:
+
+```text
+/data/workspace/bin/cloudflared
+```
+
+Características verificadas:
+
+```text
+Versão: 2026.9.1
+Arquitetura: Linux amd64
+Permissão: executável
+```
+
+A variável `CLOUDFLARE_TUNNEL_TOKEN` foi adicionada ao ambiente do Hermes. O valor nunca foi publicado neste relatório, no GitHub ou no chat.
+
+O conector foi iniciado temporariamente com `cloudflared tunnel run --token`, registrou conexão QUIC e ficou ativo. A execução é provisória: não foi resolvida persistência após restart/redeploy no ambiente atual. A persistência definitiva será tratada na migração para a nova VPS.
+
+## 6. BIC, WAF e eventos de segurança
+
+O teste externo inicial retornou:
+
+```text
+HTTP 403
+Cloudflare error 1010
+```
+
+A consulta dos eventos identificou exatamente:
+
+```text
+Host: api.50x.com.br
+Source: bic
+Rule: bic
+User-Agent: Python-urllib/3.13
+```
+
+Foi implantada uma regra de segurança específica:
+
+```text
+Nome: Skip BIC for api.50x.com.br
+Expressão: (http.host eq "api.50x.com.br")
+Ação: Skip
+Escopo: somente Browser Integrity Check
+```
+
+Não foram pulados Managed Rules, Custom Rules, Rate Limiting ou Bot Fight Mode. O BIC global não foi desativado.
+
+Os eventos descritos como “WordPress RCE” pertencem ao Listmonk instalado na VPS nova da Locaweb. Eles não justificam desativar proteções globais e as regras relacionadas continuam ativas.
+
+## 7. Diagnóstico final do HTTP 503
+
+Após a implantação da exceção do BIC, foram executados testes externos reais:
+
+```text
+https://api.50x.com.br/health    → HTTP 503
+https://api.50x.com.br/v1/models  → HTTP 503
+```
+
+Em paralelo, o teste local continuou retornando:
+
+```text
+http://127.0.0.1:8642/health → HTTP 200
+```
+
+O processo `cloudflared` permaneceu ativo, mas seus logs informaram:
+
+```text
+No ingress rules were defined in provided config (if any) nor from the cli,
+cloudflared will return 503 for all incoming HTTP requests
+```
+
+Conclusão: o problema atual não é a API Hermes, DNS ou BIC. O processo `cloudflared` usado pelo conector está sem regra de ingress carregada. A configuração do mesmo Tunnel usado pelo token precisa conter uma rota para `http://127.0.0.1:8642` e uma regra final de fallback `http_status:404`, ou ser carregada corretamente pelo modo remoto correspondente.
+
+## 8. Limitações e próximos passos
+
+- Não configurar o Apps Script em produção enquanto `https://api.50x.com.br/health` não retornar `HTTP 200`.
+- No painel Cloudflare, confirmar que a rota pertence ao Tunnel `clara-hermes-api` correto e que o serviço é `HTTP`, não `HTTPS`.
+- Garantir que a configuração de ingress foi publicada/carregada no mesmo Tunnel cujo token está em uso.
+- Repetir `/health` e `/v1/models` após a atualização e registrar o retorno.
+- Depois do `HTTP 200`, criar o gateway/Worker autenticado, sem expor `API_SERVER_KEY` ao Apps Script.
+- Fazer a primeira prova com uma única linha da planilha.
+- Resolver a persistência do `cloudflared` somente na nova VPS, com mecanismo de supervisão confirmado.
+- Não alterar as proteções do Listmonk nem registros DNS não relacionados.
+
+## 9. Proteção de segredos
+
+Não foram publicados neste relatório:
+
+- `API_SERVER_KEY`;
+- `CLOUDFLARE_TUNNEL_TOKEN`;
+- tokens OAuth do Google;
+- chaves privadas;
+- senhas;
+- dados pessoais sensíveis.
+
+Os valores foram omitidos ou representados como `[REDACTED]`.
+
+---
+
 # Resposta da Clara Hermes
 
 - **Data/hora:** 2026-09-17 07:10:44 (America/Sao_Paulo, UTC-03)
