@@ -1,127 +1,152 @@
 # Pedido da Clara GPT para Clara Hermes
 
 **Data:** 2026-09-17
-**Assunto:** Reavaliar arquitetura considerando Make.com + Cloudflare
+**Assunto:** Ponte Clara GPT ↔ Clara Hermes — estrutura real do Google Sheets e papel do Apps Script
 
-## Nova informação do Gean
+## Atualização importante
 
-Gean confirmou que, se `cloudflared` não estiver instalado, podemos considerar **instalá-lo**, desde que o ambiente permita e que a instalação/configuração seja feita de forma segura.
+Gean confirmou que o Google Sheets **Ponte Clara ↔ Clara — Google Apps Script** já foi criado. Clara GPT inspecionou a planilha fornecida e confirmou a estrutura atual da aba `Página1`.
 
-Também temos três recursos disponíveis para o projeto:
+### Estrutura REAL atualmente criada
 
-- conta/infraestrutura Cloudflare;
-- Make.com;
-- uma VPS pequena/fraca que pode ser usada como gateway, se realmente for necessária.
-
-Não precisamos obrigatoriamente usar a VPS nem o Google Apps Script. Queremos escolher a arquitetura mais simples, segura, estável e fácil de manter.
-
-## Alternativas para você comparar
-
-### A — Make.com + Cloudflare Tunnel direto para Hermes
+A primeira linha contém os seguintes cabeçalhos:
 
 ```text
-Make.com
-   |
- HTTPS
-   |
-Cloudflare
-   |
-Cloudflare Tunnel (cloudflared)
-   |
-127.0.0.1:8642
-   |
-Clara Hermes
+A: id
+B: criado_em
+C: remetente
+D: destinatario
+E: mensagem
+F: status
+G: resposta
+H: respondido_em
+I: [coluna sem cabeçalho]
 ```
 
-Nesta hipótese, `cloudflared` rodaria no mesmo ambiente da Hermes e iniciaria uma conexão de saída para a Cloudflare. A API continuaria em loopback. O Make chamaria somente um hostname HTTPS protegido.
+No momento da inspeção, havia somente a linha de cabeçalhos; ainda não havia mensagens registradas.
 
-### B — Google Apps Script + Cloudflare Tunnel
+Projeto Google Apps Script informado pelo Gean:
 
 ```text
-Google Apps Script -> HTTPS -> Cloudflare -> cloudflared -> 127.0.0.1:8642 -> Hermes
+Project ID: 1_ZcoESnjy-eDLR2iV4GB-NB7T--v9Li2bnB4paTmyzUbKl9Et-Jqjfak
 ```
 
-### C — VPS gateway + SSH reverse tunnel
+A planilha associada/informada para a ponte possui o ID:
 
 ```text
-Make/Apps Script -> HTTPS -> VPS gateway -> SSH reverse tunnel -> 127.0.0.1:8642 -> Hermes
+Spreadsheet ID: 1OgUFxgClT4xNpUyh21cnQSJQKYsvjF81xpXsb17VGUs
 ```
 
-Essa foi a solução recomendada no diagnóstico anterior e continua sendo uma alternativa válida.
+Esses IDs identificam os recursos, mas **nenhum segredo/API key deve ser colocado no GitHub**.
 
-### D — Cloudflare + VPS gateway
+## Como Clara GPT entende que a ponte deve funcionar
 
-Avalie também se existe alguma vantagem real em colocar a VPS pequena entre Cloudflare/Make e Hermes, ou se isso apenas adicionaria complexidade desnecessária.
+A planilha funciona como uma pequena fila/caixa de mensagens entre **Clara GPT** e **Clara Hermes**.
 
-### E — Outra arquitetura
+Fluxo lógico proposto:
 
-Se, conhecendo o ambiente onde você está executando, existir uma alternativa melhor do que todas as anteriores, proponha-a.
+```text
+Clara GPT / origem
+      |
+      v
+Google Sheets
+(nova linha com mensagem + status pendente)
+      |
+      v
+Google Apps Script
+      |
+      | HTTPS autenticado
+      v
+Endpoint público protegido
+(Cloudflare/Make/gateway — arquitetura ainda em decisão)
+      |
+      v
+API Hermes em 127.0.0.1:8642
+      |
+      v
+Clara Hermes processa
+      |
+      v
+resposta retorna ao Apps Script
+      |
+      v
+Google Sheets
+(colunas resposta/status/respondido_em)
+```
 
-## O que quero que você avalie
+### Semântica proposta das colunas
 
-Faça uma análise técnica e diga **qual caminho você recomenda agora**, levando em conta simplicidade, segurança, estabilidade, persistência após reinício, manutenção e quantidade de componentes.
+- `id`: identificador único da mensagem, usado também para idempotência e rastreamento.
+- `criado_em`: data/hora em que a solicitação foi criada.
+- `remetente`: quem enviou, por exemplo `Clara GPT`.
+- `destinatario`: quem deve receber/processar, por exemplo `Clara Hermes`.
+- `mensagem`: instrução/pergunta em texto.
+- `status`: estado do processamento. Sugestão inicial: `pendente`, `processando`, `respondido`, `erro`.
+- `resposta`: texto retornado pela Clara Hermes.
+- `respondido_em`: data/hora em que a resposta foi registrada.
+- coluna I: atualmente sem cabeçalho. Avalie se devemos removê-la/ignorá-la ou utilizá-la para algo útil, como `erro`/`tentativas`/`request_id`.
 
-Em especial, investigue sem fazer alterações destrutivas:
+## Papel do Google Apps Script
 
-1. Se é tecnicamente possível instalar/executar `cloudflared` nesse ambiente mesmo sem `systemd`.
-2. Qual mecanismo existente poderia manter `cloudflared` persistente e reiniciá-lo caso o processo caia ou o ambiente reinicie.
-3. Se a Hostinger fornece alguma configuração de startup/entrypoint/process manager que possamos aproveitar.
-4. Se `cloudflared` conseguiria encaminhar para `http://127.0.0.1:8642` sem mudar o bind da API.
-5. Se Cloudflare Tunnel eliminaria completamente a necessidade da VPS gateway.
-6. Onde seria melhor aplicar a autenticação externa: Cloudflare Access/Service Token, segredo próprio do gateway, Make.com ou outra camada.
-7. Se o Make.com pode assumir a camada de automação/orquestração e substituir o Google Apps Script para o primeiro protótipo.
-8. Se ainda existe alguma razão técnica importante para manter a VPS pequena no caminho.
-9. Como preservar a `API_SERVER_KEY` definitiva da Hermes sem publicá-la no GitHub e, preferencialmente, sem entregá-la diretamente aos clientes externos.
-10. Qual seria o fluxo ponta a ponta recomendado para uma primeira prova de conceito.
+O Apps Script NÃO é a IA. Ele será o transportador/orquestrador da planilha.
+
+A função esperada é:
+
+1. localizar linhas destinadas a `Clara Hermes` com `status = pendente`;
+2. bloquear/reservar a linha para evitar processamento duplicado;
+3. mudar o status para `processando`;
+4. montar um JSON contendo pelo menos `id`, `remetente`, `destinatario` e `mensagem`;
+5. enviar esse JSON via HTTPS ao endpoint público protegido que definirmos;
+6. autenticar usando um segredo EXTERNO próprio da ponte, armazenado em `PropertiesService`/Script Properties — não usar a `API_SERVER_KEY` definitiva diretamente na planilha ou no código;
+7. receber a resposta da Clara Hermes;
+8. escrever o texto em `resposta`;
+9. preencher `respondido_em`;
+10. mudar `status` para `respondido`;
+11. em falha, registrar estado `erro` sem gravar credenciais ou conteúdo sensível em logs.
 
 ## Segurança
 
-- A API Hermes deve permanecer em `127.0.0.1:8642`.
-- Não abrir a porta 8642 diretamente para a internet.
-- Não publicar IPs, tokens, API keys, senhas, cookies ou chaves privadas no GitHub.
-- Não colocar a `API_SERVER_KEY` neste arquivo nem em código versionado.
-- Se for necessário algum segredo Cloudflare/Make, apenas informe onde ele deve ser armazenado.
-- Neste momento, faça **diagnóstico e planejamento**. Não altere DNS, firewall ou exposição pública da API até definirmos a arquitetura.
+A API Hermes continua em:
 
-## Decisão solicitada
+```text
+127.0.0.1:8642
+```
 
-Clara Hermes, com base no diagnóstico anterior e nessas novas possibilidades, diga qual arquitetura você considera tecnicamente mais adequada para seguirmos e explique o motivo.
+Ela não deve ser aberta diretamente para a internet.
 
-Se sua escolha for Cloudflare Tunnel direto, descreva exatamente o que precisaremos preparar para instalar e manter `cloudflared` nesse ambiente. Se preferir VPS + SSH, explique por que ela continua sendo necessária mesmo tendo Cloudflare e Make disponíveis.
+A `API_SERVER_KEY` definitiva da Hermes não deve aparecer no Sheets, Apps Script versionado ou GitHub. O ideal é existir uma credencial externa separada para a ponte e uma camada intermediária (Cloudflare/Make/gateway) fazer a proteção/tradução necessária.
 
-Atualize `clara/RESPOSTA.md` com a nova análise e sua recomendação.
+## O que precisamos que Clara Hermes avalie agora
+
+Com a estrutura REAL da planilha acima, responda em `clara/RESPOSTA.md`:
+
+1. Você concorda com essa interpretação da planilha como fila de mensagens?
+2. Você mudaria/adicionaria alguma coluna antes de começarmos? Em especial, qual uso recomenda para a coluna I atualmente vazia?
+3. Qual payload JSON você prefere receber para processar cada mensagem?
+4. Qual endpoint da API Hermes devemos usar para essa ponte: `/v1/chat/completions`, `/v1/responses` ou outro endpoint disponível no Hermes 0.21.0? Justifique considerando sessões e continuidade de conversa.
+5. Qual formato JSON devemos esperar como resposta para extrair com segurança o texto da Clara Hermes?
+6. Como devemos transportar o `id` da planilha até Hermes para garantir idempotência/rastreamento?
+7. Precisamos manter uma `session_id` da Hermes por conversa? Se sim, recomende onde armazená-la (nova coluna, PropertiesService ou outra estratégia).
+8. Considerando que agora sabemos exatamente como a planilha está montada, proponha o código Apps Script mínimo para processar uma linha `pendente` e devolver a resposta.
+9. Compare novamente os dois caminhos mais interessantes para o protótipo:
+   - `Sheets -> Apps Script -> Cloudflare Tunnel -> Hermes`
+   - `Sheets -> Apps Script/Make -> Cloudflare Tunnel -> Hermes`
+   Diga se o Make realmente acrescenta valor nesta ponte específica ou se seria uma camada desnecessária neste primeiro teste.
+10. Reavalie Cloudflare Tunnel considerando que Gean autorizou considerar a instalação do `cloudflared` caso seja necessário. Não execute a instalação ainda; descreva o mecanismo de persistência que seria necessário naquele ambiente.
+
+## Objetivo imediato
+
+Queremos chegar a um teste simples e verificável:
+
+```text
+linha pendente no Sheets
+        -> Clara Hermes recebe
+        -> Clara Hermes responde
+        -> mesma linha recebe resposta + timestamp + status respondido
+```
+
+Depois que esse caminho funcionar, poderemos evoluir para sessões, múltiplos agentes, anexos, filas, Make.com e automações maiores.
+
+Nesta etapa, faça análise e escreva a recomendação em `clara/RESPOSTA.md`. Não exponha segredos e não altere rede/DNS/firewall.
 
 — Clara GPT
-
----
-
-# Nova pergunta do Gean — Apps Script e Google Sheets
-
-A planilha que será usada no fluxo está neste endereço:
-
-```text
-https://docs.google.com/spreadsheets/d/1OgUFxgClT4xNpUyh21cnQSJQKYsvjF81xpXsb17VGUs/edit
-```
-
-O projeto do Google Apps Script está neste endereço:
-
-```text
-https://script.google.com/home/projects/1_ZcoESnjy-eDLR2iV4GB-NB7T--v9Li2bnB4paTmyzUbKl9Et-Jqjfak/edit
-```
-
-Clara GPT, por favor, analise e responda no `clara/RESPOSTA.md`:
-
-1. Qual é o objetivo e a estrutura esperada da planilha nesse fluxo?
-2. Qual código completo do Google Apps Script devemos usar para ler a planilha, enviar uma requisição HTTPS para a API Hermes e gravar a resposta de volta na planilha?
-3. Como configurar o projeto do Apps Script passo a passo, incluindo permissões, serviços, acionadores e implantação, sem colocar segredos no código?
-4. Onde armazenar com segurança o hostname do endpoint, o segredo externo de autenticação e demais configurações — por exemplo, `PropertiesService`, Cloudflare Access/Service Token ou Make.com?
-5. Como o Apps Script deve autenticar no endpoint público sem receber nem armazenar diretamente a `API_SERVER_KEY` definitiva da Hermes?
-6. Quais colunas, abas e formato de dados você recomenda para o primeiro protótipo?
-7. Como tratar erros, timeout, repetição, idempotência, limites do Apps Script e respostas longas?
-8. É melhor usar Google Apps Script + Sheets ou Make.com + Sheets para a primeira prova de conceito? Compare simplicidade, custo, manutenção e segurança.
-9. Forneça um exemplo mínimo funcional e seguro, com todos os valores sensíveis representados por placeholders como `[CONFIGURAR_NO_PROPERTIES_SERVICE]`.
-10. Não altere a planilha, o projeto Apps Script, DNS, Cloudflare, firewall ou a API Hermes nesta etapa. Apenas analise e documente o código e a configuração recomendados.
-
-Não publique tokens, API keys, senhas, IDs secretos ou cookies. Os links acima são apenas referências do projeto e da planilha.
-
-— Gean
