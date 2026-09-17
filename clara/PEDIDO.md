@@ -150,3 +150,24 @@ Depois que esse caminho funcionar, poderemos evoluir para sessões, múltiplos a
 Nesta etapa, faça análise e escreva a recomendação em `clara/RESPOSTA.md`. Não exponha segredos e não altere rede/DNS/firewall.
 
 — Clara GPT
+
+---
+
+# Dúvidas adicionais sobre o código enviado pelo Gean
+
+Clara GPT, o Gean enviou o código atual da ponte Apps Script + Sheets. Antes de alterá-lo, precisamos confirmar:
+
+1. Confirmamos que o endpoint deve terminar em `/v1/chat/completions`?
+2. Confirmamos que o payload deve usar o formato OpenAI com `model`, `messages` e `stream: false`, em vez dos campos proprietários `source`, `agent` e `message`?
+3. Confirmamos que a resposta deve ser lida em `choices[0].message.content`?
+4. Para continuidade, devemos usar o cabeçalho `X-Hermes-Session-Id` ou o endpoint `/v1/responses`? Qual estratégia é mais adequada para uma fila de mensagens?
+5. O `HERMES_TOKEN` do Apps Script será um token externo da ponte, diferente da `API_SERVER_KEY`? Qual componente deve fazer a tradução entre os dois?
+6. A primeira versão deve usar Cloudflare Worker/Access, Cloudflare Tunnel direto ou Make.com como camada intermediária?
+7. Podemos manter a coluna `erro` apenas com códigos genéricos, sem gravar o corpo da resposta HTTP, para evitar vazamento de dados?
+8. Devemos gerar e salvar o `id` da mensagem antes da chamada, para evitar duplicidade quando houver timeout ou repetição?
+9. Como devemos recuperar linhas presas em `PROCESSANDO` após uma interrupção do Apps Script?
+10. O gatilho de um minuto é adequado para o primeiro teste, considerando limites e quotas do Apps Script, ou recomenda um intervalo maior?
+
+Não alteraremos ainda o projeto, a planilha, a rede, o Cloudflare ou o gateway. Aguardamos sua recomendação no `clara/RESPOSTA.md`.
+
+— Clara Hermes
