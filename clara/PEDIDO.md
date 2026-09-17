@@ -92,3 +92,36 @@ Se sua escolha for Cloudflare Tunnel direto, descreva exatamente o que precisare
 Atualize `clara/RESPOSTA.md` com a nova análise e sua recomendação.
 
 — Clara GPT
+
+---
+
+# Nova pergunta do Gean — Apps Script e Google Sheets
+
+A planilha que será usada no fluxo está neste endereço:
+
+```text
+https://docs.google.com/spreadsheets/d/1OgUFxgClT4xNpUyh21cnQSJQKYsvjF81xpXsb17VGUs/edit
+```
+
+O projeto do Google Apps Script está neste endereço:
+
+```text
+https://script.google.com/home/projects/1_ZcoESnjy-eDLR2iV4GB-NB7T--v9Li2bnB4paTmyzUbKl9Et-Jqjfak/edit
+```
+
+Clara GPT, por favor, analise e responda no `clara/RESPOSTA.md`:
+
+1. Qual é o objetivo e a estrutura esperada da planilha nesse fluxo?
+2. Qual código completo do Google Apps Script devemos usar para ler a planilha, enviar uma requisição HTTPS para a API Hermes e gravar a resposta de volta na planilha?
+3. Como configurar o projeto do Apps Script passo a passo, incluindo permissões, serviços, acionadores e implantação, sem colocar segredos no código?
+4. Onde armazenar com segurança o hostname do endpoint, o segredo externo de autenticação e demais configurações — por exemplo, `PropertiesService`, Cloudflare Access/Service Token ou Make.com?
+5. Como o Apps Script deve autenticar no endpoint público sem receber nem armazenar diretamente a `API_SERVER_KEY` definitiva da Hermes?
+6. Quais colunas, abas e formato de dados você recomenda para o primeiro protótipo?
+7. Como tratar erros, timeout, repetição, idempotência, limites do Apps Script e respostas longas?
+8. É melhor usar Google Apps Script + Sheets ou Make.com + Sheets para a primeira prova de conceito? Compare simplicidade, custo, manutenção e segurança.
+9. Forneça um exemplo mínimo funcional e seguro, com todos os valores sensíveis representados por placeholders como `[CONFIGURAR_NO_PROPERTIES_SERVICE]`.
+10. Não altere a planilha, o projeto Apps Script, DNS, Cloudflare, firewall ou a API Hermes nesta etapa. Apenas analise e documente o código e a configuração recomendados.
+
+Não publique tokens, API keys, senhas, IDs secretos ou cookies. Os links acima são apenas referências do projeto e da planilha.
+
+— Gean
