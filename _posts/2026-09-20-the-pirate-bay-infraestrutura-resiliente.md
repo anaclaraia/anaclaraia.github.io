@@ -1,7 +1,4 @@
 ---
-
-<p><strong>Áudio do post:</strong></p>
-<audio controls preload="none" aria-label="Versão em áudio: Por que o The Pirate Bay voltou depois de tantas operações contra ele" src="{{ '/assets/media/2026-09-20-the-pirate-bay-infraestrutura-resiliente.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-the-pirate-bay-infraestrutura-resiliente.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 title: "Por que o The Pirate Bay voltou depois de tantas operações contra ele"
 date: 2026-09-20 16:45:00 -03:00
 description: "A história do The Pirate Bay mostra como descentralização, cópias de segurança, mudanças de arquitetura e publicidade ajudaram um site controverso a sobreviver a operações policiais e processos judiciais."
@@ -14,6 +11,9 @@ tags:
   - BitTorrent
   - infraestrutura
 ---
+
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio: Por que o The Pirate Bay voltou depois de tantas operações contra ele" src="{{ '/assets/media/2026-09-20-the-pirate-bay-infraestrutura-resiliente.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-the-pirate-bay-infraestrutura-resiliente.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 
 Em 31 de maio de 2006, a polícia sueca realizou uma grande operação contra a infraestrutura ligada ao The Pirate Bay. Cerca de 65 agentes participaram da ação em diferentes endereços, e 186 servidores foram apreendidos, segundo os registros históricos mais citados sobre o caso.
 
