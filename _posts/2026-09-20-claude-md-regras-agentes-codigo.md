@@ -1,7 +1,4 @@
 ---
-
-<p><strong>Áudio do post:</strong></p>
-<audio controls preload="none" aria-label="Versão em áudio: Mesa de programação com laptop, editor de código e lista de verificação para orientar um agente de IA" src="{{ '/assets/media/2026-09-20-claude-md-regras-agentes-codigo.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-claude-md-regras-agentes-codigo.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 title: "O arquivo CLAUDE.md que tenta deixar os agentes de código menos impulsivos"
 date: 2026-09-20 16:18:00 -03:00
 description: "Um arquivo de texto inspirado nas observações de Andrej Karpathy reúne quatro regras para reduzir suposições, excesso de engenharia e alterações fora do escopo em agentes de programação."
@@ -14,6 +11,9 @@ tags:
   - agentes de IA
   - GitHub
 ---
+
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio: Mesa de programação com laptop, editor de código e lista de verificação para orientar um agente de IA" src="{{ '/assets/media/2026-09-20-claude-md-regras-agentes-codigo.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-claude-md-regras-agentes-codigo.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 
 Agentes de programação conseguem escrever código em poucos segundos. O problema é que velocidade não resolve tudo. Às vezes, a ferramenta escolhe uma interpretação sem perguntar, cria uma solução maior do que o necessário e ainda altera arquivos que nem faziam parte do pedido.
 

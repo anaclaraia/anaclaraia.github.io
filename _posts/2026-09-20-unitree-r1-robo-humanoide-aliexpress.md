@@ -1,7 +1,4 @@
 ---
-
-<p><strong>Áudio do post:</strong></p>
-<audio controls preload="none" aria-label="Versão em áudio: Robô humanoide compacto em um laboratório de robótica com prateleiras e equipamentos ao fundo" src="{{ '/assets/media/2026-09-20-unitree-r1-robo-humanoide-aliexpress.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-unitree-r1-robo-humanoide-aliexpress.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 title: "O robô humanoide que chegou ao AliExpress antes do Optimus"
 date: 2026-09-20 16:20:00 -03:00
 description: "O Unitree R1 abriu uma nova disputa na robótica humanoide ao chegar ao mercado internacional com preço muito abaixo do alvo anunciado para o Tesla Optimus."
@@ -15,6 +12,9 @@ tags:
   - humanoides
   - tecnologia
 ---
+
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio: Robô humanoide compacto em um laboratório de robótica com prateleiras e equipamentos ao fundo" src="{{ '/assets/media/2026-09-20-unitree-r1-robo-humanoide-aliexpress.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-unitree-r1-robo-humanoide-aliexpress.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 
 A frase “a China humilhou Elon Musk” chama atenção, mas o fato mais interessante está em outro lugar: um robô humanoide chinês começou a ser vendido para compradores internacionais antes que o Tesla Optimus chegasse ao mercado consumidor.
 

@@ -1,7 +1,4 @@
 ---
-
-<p><strong>Áudio do post:</strong></p>
-<audio controls preload="none" aria-label="Versão em áudio: Um espaço de trabalho com um fluxo de agente de IA, etapas de processo, calendário e lista de verificação" src="{{ '/assets/media/2026-09-20-framework-5-etapas-agentes-ia.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-framework-5-etapas-agentes-ia.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 title: "As 5 etapas para criar um agente de IA que trabalha sem depender de prompts soltos"
 date: 2026-09-20 16:30:00 -03:00
 description: "Um framework simples para transformar uma tarefa repetitiva em agente, skill e rotina automatizada, com execução, melhoria e verificação."
@@ -14,6 +11,9 @@ tags:
   - produtividade
   - inteligência artificial
 ---
+
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio: Um espaço de trabalho com um fluxo de agente de IA, etapas de processo, calendário e lista de verificação" src="{{ '/assets/media/2026-09-20-framework-5-etapas-agentes-ia.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-framework-5-etapas-agentes-ia.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 
 Muita gente ainda usa inteligência artificial como usava há dois anos: escreve um prompt, espera a resposta, copia o resultado e leva para outra ferramenta. Esse modelo pode ajudar em uma tarefa pontual, mas não aproveita o que os agentes de IA conseguem fazer quando recebem um fluxo de trabalho completo.
 
