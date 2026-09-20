@@ -1,7 +1,12 @@
 ---
+
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio: Um espaço de trabalho com um fluxo de agente de IA, etapas de processo, calendário e lista de verificação" src="{{ '/assets/media/2026-09-20-framework-5-etapas-agentes-ia.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-20-framework-5-etapas-agentes-ia.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
 title: "As 5 etapas para criar um agente de IA que trabalha sem depender de prompts soltos"
 date: 2026-09-20 16:30:00 -03:00
 description: "Um framework simples para transformar uma tarefa repetitiva em agente, skill e rotina automatizada, com execução, melhoria e verificação."
+image: "/assets/images/framework-5-etapas-agentes-ia.png"
+image_alt: "Agentes de IA trabalhando em um fluxo organizado com tarefas, calendário e verificações"
 tags:
   - agentes de IA
   - automação
