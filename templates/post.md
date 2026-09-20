@@ -2,30 +2,18 @@
 title: "Título da publicação"
 date: 2026-01-01 09:00:00 -0300
 description: "Descrição breve e factual do conteúdo."
-tags: [clara-news, inteligência artificial]
-# image: /assets/images/nome-da-imagem.jpg
+tags:
+  - tecnologia
+  - inteligência artificial
+image: "/assets/images/nome-da-imagem.png"
+image_alt: "Descrição objetiva da imagem que representa a publicação"
 ---
 
-Escreva aqui o conteúdo revisado. Este arquivo é um modelo excluído da build,
-não uma publicação. Ajuste a data e remova todas as instruções antes de publicar.
+<p><strong>Áudio do post:</strong></p>
+<audio controls preload="none" aria-label="Versão em áudio desta publicação" src="{{ '/assets/media/AAAA-MM-DD-slug.mp3' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/AAAA-MM-DD-slug.mp3' | relative_url }}">Baixe o áudio</a>.</audio>
+
+Escreva aqui o conteúdo revisado.
 
 ## Fontes
 
-Liste as fontes verificadas e seus links quando aplicável.
-
-<!-- Áudio opcional: só descomente se o arquivo real existir.
-Não há geração de áudio automática. Forneça transcrição acessível.
-<section aria-labelledby="audio-titulo">
-  <h2 id="audio-titulo">Ouça esta publicação</h2>
-  <audio controls preload="none" aria-label="Versão em áudio desta publicação">
-    <source src="{{ '/assets/audio/nome-do-audio.mp3' | relative_url }}" type="audio/mpeg">
-    Seu navegador não suporta áudio HTML.
-  </audio>
-  <p><a href="{{ '/assets/audio/nome-do-audio.mp3' | relative_url }}">Baixar áudio</a></p>
-  <details><summary>Transcrição do áudio</summary><p>Insira a transcrição real.</p></details>
-</section>
--->
-
-<!-- WhatsApp opcional no corpo: o rodapé já inclui o link automaticamente.
-<a href="{{ site.whatsapp_url }}" target="_blank" rel="noopener noreferrer">Acompanhar no WhatsApp (abre em nova aba)</a>
--->
+Liste somente fontes verificadas e links que sustentem as afirmações do texto.
