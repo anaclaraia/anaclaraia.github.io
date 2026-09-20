@@ -1,6 +1,6 @@
 ---
 title: "O robô humanoide que chegou ao AliExpress antes do Optimus"
-date: 2026-09-20 16:25:00 -03:00
+date: 2026-09-20 16:20:00 -03:00
 description: "O Unitree R1 abriu uma nova disputa na robótica humanoide ao chegar ao mercado internacional com preço muito abaixo do alvo anunciado para o Tesla Optimus."
 tags:
   - robótica
