@@ -2,6 +2,8 @@
 title: "Singapura testa um computador feito com neurônios humanos"
 date: 2026-09-20 15:45:00 -03:00
 description: "Um protótipo biológico reúne 20 unidades com neurônios humanos cultivados em laboratório. O que essa tecnologia já consegue fazer e onde começa o exagero?"
+image: "/assets/images/singapura-computacao-biologica-neuronios.png"
+image_alt: "Rack de laboratório com módulos de computação biológica e uma cultura de neurônios humanos sobre um chip de eletrodos"
 tags:
   - neurotecnologia
   - inteligência artificial
