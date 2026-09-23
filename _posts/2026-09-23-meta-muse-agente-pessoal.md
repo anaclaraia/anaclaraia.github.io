@@ -20,7 +20,10 @@ image_alt: "Robô branco e prateado representando um agente pessoal de inteligê
 
 A Meta apresentou o Muse como um agente pessoal de inteligência artificial que não quer ficar limitado ao formato de pergunta e resposta. A proposta é que ele receba um objetivo, monte um plano e execute parte do trabalho em nome do usuário, com permissões e aprovações ao longo do caminho.[1]
 
-A diferença parece simples, mas muda a expectativa sobre o que se pode pedir a uma IA. Em vez de perguntar apenas como reservar uma viagem, por exemplo, a pessoa poderia pedir que o agente pesquise opções, preencha formulários e avance na tarefa. Segundo a Meta, o Muse também pode continuar trabalhando depois que o usuário fecha o aplicativo e voltar quando algo mudar ou quando for necessária uma aprovação.[1]
+A diferença parece simples, mas muda a expectativa sobre o que se pode pedir a uma IA. Em vez de perguntar apenas como reservar uma viagem, por exemplo, a pessoa poderia pedir que o agente pesquise opções, preencha formulários e avance na tarefa. Segundo a Meta, o Muse também pode continuar trabalhando depois que o usuário fecha o aplicativo e voltar quando algo mudar ou quando for necessária uma aprovação, como antes de enviar um e-mail ou fazer uma compra.[1]
+
+<p><strong>Vídeo oficial da Meta sobre o Muse:</strong></p>
+<video controls preload="metadata" width="100%" aria-label="Vídeo oficial da Meta apresentando o Muse" poster="{{ '/assets/images/meta-muse-agente-pessoal.png' | relative_url }}"><source src="https://about.fb.com/br/wp-content/uploads/sites/11/2026/09/Muse-Sizzle-16x9-1.mp4" type="video/mp4">Seu navegador não suporta vídeo HTML5. <a href="https://about.fb.com/br/wp-content/uploads/sites/11/2026/09/Muse-Sizzle-16x9-1.mp4">Assista ao vídeo oficial da Meta</a>.</video>
 
 ## Do chatbot ao agente pessoal
 
@@ -44,7 +47,7 @@ A Meta afirma que o Muse não enxerga diretamente senhas nem métodos de pagamen
 
 Outro recurso anunciado é o registro das ações realizadas e planejadas. Isso pode ajudar o usuário a entender o que o agente fez, mas a utilidade real dependerá da clareza desse histórico e da facilidade para interromper uma tarefa antes que ela produza uma consequência difícil de reverter.
 
-A Meta também informa que será possível pedir para o Muse esquecer informações específicas e optar por não usar as interações no treinamento dos modelos. Ainda assim, privacidade não é apenas uma configuração de menu. O usuário precisará avaliar quais dados conecta, quais permissões concede e em que situações uma aprovação automática pode se tornar um hábito sem revisão.[1]
+A Meta também informa que será possível pedir para o Muse esquecer informações específicas e optar por não usar as interações no treinamento dos modelos. Ainda assim, privacidade não é apenas uma configuração de menu. O usuário precisará avaliar quais dados conecta, quais permissões concede e em que situações uma aprovação automática pode se tornar um hábito sem revisão.[1][4]
 
 ## O que muda para quem usa IA no dia a dia
 
@@ -67,7 +70,15 @@ A apresentação da Meta é ambiciosa, mas os resultados ainda dependem de dispo
 
 Também existe uma diferença entre um agente conseguir abrir um navegador e um agente executar uma tarefa complexa com precisão, segurança e bom senso. Formulários mudam, páginas apresentam obstáculos, preços expiram e instruções podem ser ambíguas. Nesses casos, a supervisão humana deixa de ser um detalhe e passa a fazer parte do produto.
 
-A Meta diz que o Muse terá uma versão gratuita com planos pagos para quem quiser usar mais recursos. Os limites e condições precisam ser observados antes de transformar o serviço em parte de uma rotina de trabalho.[1][3]
+A Meta diz que o Muse terá uma versão gratuita com planos pagos para quem quiser usar mais recursos. Os limites e condições precisam ser observados antes de transformar o serviço em parte de uma rotina de trabalho.[1][3][4]
+
+## Onde o Muse já funciona
+
+Segundo a página oficial brasileira da Meta, o Muse está sendo lançado nos Estados Unidos para iOS, Android e pelo site muse.ai. A empresa também afirma que o agente pode ser usado diretamente no WhatsApp.[4]
+
+O anúncio não informa uma data para a chegada ao Brasil. Portanto, até o momento, não há prazo oficial para dizer quando o Muse estará disponível para usuários brasileiros. A Meta afirma apenas que o produto chegará em breve aos óculos com inteligência artificial.[4]
+
+Isso também significa que uma eventual disponibilidade em português ou em outros países não deve ser presumida a partir do lançamento americano. A expansão pode depender de suporte regional, idioma, integrações, regras locais e da própria estratégia comercial da Meta.
 
 ## A pergunta mais importante não é se ele pode agir
 
@@ -85,8 +96,11 @@ O Muse mostra para onde a Meta quer levar sua estratégia de inteligência artif
 
 [3] The Verge. “Meta bets on AI agent Muse to catch up in AI race”. 8 de setembro de 2026. https://www.theverge.com/ai-artificial-intelligence/991216/meta-bets-on-ai-agent-muse-to-catch-up-in-ai-race
 
+[4] Meta Brasil. “Conheça o Muse: o primeiro agente de IA pessoal do mundo, feito para todos”. 8 de setembro de 2026. https://about.fb.com/br/news/2026/09/conheca-o-muse-o-primeiro-agente-de-ia-pessoal-do-mundo-feito-para-todos/
+
 ## Sources
 
 [1] https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent — Introducing Muse: The World’s First Personal AI Agent Built for Everyone
 [2] https://ai.meta.com/muse — Muse: Meta\x27s personal AI agent, features & capabilities
 [3] https://www.theverge.com/ai-artificial-intelligence/991216/meta-bets-on-ai-agent-muse-to-catch-up-in-ai-race — Meta bets on AI agent Muse to catch up in AI race
+[4] https://about.fb.com/br/news/2026/09/conheca-o-muse-o-primeiro-agente-de-ia-pessoal-do-mundo-feito-para-todos — Conheça o Muse: o primeiro agente de IA pessoal do mundo, feito para todos
