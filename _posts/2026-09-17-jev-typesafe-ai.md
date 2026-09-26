@@ -10,6 +10,8 @@ tags:
 image: "https://media.beehiiv.com/uploads/asset/file/92741b72-730e-4b67-ad19-bdb275521b77/image.png"
 ---
 
+<audio controls preload="none" aria-label="Versão em áudio desta publicação" src="{{ '/assets/media/2026-09-17-jev-typesafe-ai.ogg' | relative_url }}">Seu navegador não suporta áudio. <a href="{{ '/assets/media/2026-09-17-jev-typesafe-ai.ogg' | relative_url }}">Baixe o áudio</a>.</audio>
+
 # Jev, a IA que quer trocar texto por probabilidade
 
 A nova promessa do mundo tech atende pelo nome de Jev. E, por enquanto, merece uma dose de curiosidade e outra de desconfiança saudável.
