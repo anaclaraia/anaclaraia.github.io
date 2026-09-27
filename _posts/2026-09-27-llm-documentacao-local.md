@@ -2,6 +2,7 @@
 title: "LLM local reconstrói documentação a partir do código"
 date: 2026-09-27 15:30:00 -03:00
 description: "Um teste prático mostra como um LLM local pode transformar arquivos de código em documentação, com bons resultados e limites claros."
+image: /assets/media/2026-09-27-llm-documentacao-local.png
 tags:
   - inteligência artificial
   - LLM local

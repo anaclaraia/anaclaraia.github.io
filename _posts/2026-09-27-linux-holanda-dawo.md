@@ -2,6 +2,7 @@
 title: "Holanda testa um Linux próprio para o setor público"
 date: 2026-09-27 15:19:00 -03:00
 description: "Projeto DAWO usa NixOS para testar uma base digital pública mais autônoma, sem prometer uma troca imediata do Windows."
+image: /assets/media/2026-09-27-linux-holanda-dawo.png
 tags:
   - Holanda
   - Linux
